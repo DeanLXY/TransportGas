@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#84df2a"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="30dp"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:paddingBottom="24dp"
+            android:id="@+id/list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#ffffff"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/distance"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_gravity="center"
+                android:background="#ffb60f"
+                android:gravity="center"
+                android:text="配送导航"
+                android:textColor="#ffffff"
+                android:textSize="35dp" />
+
+            <Button
+                android:id="@+id/select_order"
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/fillet_button_background"
+                android:paddingEnd="10dp"
+                android:paddingStart="10dp"
+                android:text="选择订单"
+                android:textColor="#000000"
+                android:textSize="15dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:minHeight="82dp"
+                android:orientation="horizontal"
+                android:paddingStart="10dp" >
+
+                <ImageView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:src="@drawable/ic_launcher" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:lineSpacingExtra="4dp"
+                    android:text="滨湖区河新村12号3单元502\n滨湖区河新村12号3单元502\n滨湖区河新村12号3单元502"
+                    android:textColor="#000000"
+                    android:textSize="16dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingStart="10dp"
+                android:paddingTop="16dp" >
+
+                <TextView
+                    android:id="@+id/tv_longitude"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:lineSpacingExtra="4dp"
+                    android:text="经度："
+                    android:textColor="#aa000000" />
+
+                <TextView
+                    android:id="@+id/tv_latitude"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:lineSpacingExtra="4dp"
+                    android:text="维度："
+                    android:textColor="#aa000000" />
+            </LinearLayout>
+
+            <ToggleButton
+                android:id="@+id/GPS_state"
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/fillet_button_background"
+                android:paddingEnd="10dp"
+                android:paddingStart="10dp"
+                android:textColor="#000000"
+                android:textOff="GPS状态关"
+                android:textOn="GPS状态开"
+                android:textSize="15dp"
+                android:checked="false" />
+
+            <Button
+                android:id="@+id/start_navigation"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/fillet_button_background"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
+                android:text="开始导航"
+                android:textColor="#ffffff"
+                android:textSize="20dp" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="#f7f4ef"
+            android:paddingTop="4dp" >
+
+            <Button
+                android:id="@+id/back"
+                android:layout_width="100dp"
+                android:layout_height="40dp"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center"
+                android:background="@drawable/back_button_background"
+                android:gravity="center"
+                android:text="返回"
+                android:textColor="#ffc90b"
+                android:textSize="20dp" />
+        </RelativeLayout>
+    </LinearLayout>
+
+</FrameLayout>

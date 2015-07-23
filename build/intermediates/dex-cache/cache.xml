@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="D:\Android\AsWorkspace\TransportGas\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.0\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.0"
+        sha1="1ee588ff2c4daf7b97c1cbf922a6c7f027285c2f">
+        <dex dex="D:\Android\AsWorkspace\TransportGas\app\build\intermediates\pre-dexed\debug\classes-dd48ed479eb815f516673914b43425e0745bf36a.jar" />
+    </item>
+    <item
+        jar="D:\Android\AsWorkspace\TransportGas\app\libs\android_api_1.1_forsdk.jar"
+        jumboMode="false"
+        revision="22.0.0"
+        sha1="610ab8a4952cfec5cc008a697790e21dec7b8d3a">
+        <dex dex="D:\Android\AsWorkspace\TransportGas\app\build\intermediates\pre-dexed\debug\android_api_1.1_forsdk-75eea2965fcbe162a12303f79df1c6e0c70fc338.jar" />
+    </item>
+    <item
+        jar="D:\Android\AsWorkspace\TransportGas\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.0\jars\libs\internal_impl-22.2.0.jar"
+        jumboMode="false"
+        revision="22.0.0"
+        sha1="57f2ab85c164ff1676ec64dee787981c046fab79">
+        <dex dex="D:\Android\AsWorkspace\TransportGas\app\build\intermediates\pre-dexed\debug\internal_impl-22.2.0-0a71b2ac5219fcfea937b78f71f6c90d3971e4f6.jar" />
+    </item>
+    <item
+        jar="D:\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\22.2.0\support-annotations-22.2.0.jar"
+        jumboMode="false"
+        revision="22.0.0"
+        sha1="66b42a1f3eb7676070b7ef7f14b603483aecbee1">
+        <dex dex="D:\Android\AsWorkspace\TransportGas\app\build\intermediates\pre-dexed\debug\support-annotations-22.2.0-87f5a75e1de9f212162c85b163eaa9811670bbdf.jar" />
+    </item>
+    <item
+        jar="D:\Android\AsWorkspace\TransportGas\app\libs\BaiduLBS_Android.jar"
+        jumboMode="false"
+        revision="22.0.0"
+        sha1="9f3f93c544357093eee2c1904bcf5bbb17637a9f">
+        <dex dex="D:\Android\AsWorkspace\TransportGas\app\build\intermediates\pre-dexed\debug\BaiduLBS_Android-2985b74f7c91908c2ff7013c4b74dd3b02c55448.jar" />
+    </item>
+    <item
+        jar="D:\Android\AsWorkspace\TransportGas\app\libs\galaxy_mini.jar"
+        jumboMode="false"
+        revision="22.0.0"
+        sha1="58de9ecfba229dbb2c3eb3f45dbe284ba58100ea">
+        <dex dex="D:\Android\AsWorkspace\TransportGas\app\build\intermediates\pre-dexed\debug\galaxy_mini-d07c5c7f1648aff075520fc5c43a4145c88944ed.jar" />
+    </item>
+    <item
+        jar="D:\Android\AsWorkspace\TransportGas\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.2.0\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.0"
+        sha1="73753982da6bde518f3a4c6b372749981d14d1a0">
+        <dex dex="D:\Android\AsWorkspace\TransportGas\app\build\intermediates\pre-dexed\debug\classes-2d6eb75745b7ecdfa067b43e088b48e74ebcc1e2.jar" />
+    </item>
+    <item
+        jar="D:\Android\AsWorkspace\TransportGas\app\libs\autoba.jar"
+        jumboMode="false"
+        revision="22.0.0"
+        sha1="bdee5b4455c149e86481d837afb071d1232fb0cc">
+        <dex dex="D:\Android\AsWorkspace\TransportGas\app\build\intermediates\pre-dexed\debug\autoba-f318b59f40d1a8140a832760a4f87524358eb264.jar" />
+    </item>
+
+</items>

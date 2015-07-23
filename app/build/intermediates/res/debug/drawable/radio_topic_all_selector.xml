@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:drawable="@drawable/tab_left_normal" android:state_selected="true"/>
+    <item android:drawable="@drawable/tab_left_normal" android:state_focused="true"/>
+    <item android:drawable="@drawable/tab_left_normal" android:state_pressed="true"/>
+    <item android:drawable="@drawable/tab_left_normal" android:state_checked="true"/>
+    <item android:drawable="@drawable/tab_left_press"/>
+
+</selector><!-- From: file:/D:/Android/AsWorkspace/TransportGas/app/src/main/res/drawable/radio_topic_all_selector.xml -->

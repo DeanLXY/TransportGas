@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item>
+        <shape android:shape="rectangle" >
+            
+            <solid android:color="#ffa8a8a8"/>
+
+            <padding
+                android:bottom="1.0dp"
+                android:left="1.0dp"
+                android:right="1.0dp"
+                android:top="1.0dp" />
+        </shape>
+    </item>
+    <item
+        android:left="1.0px"
+        android:right="1.0px"
+        android:top="1.0px">
+        <shape android:shape="rectangle" >
+            <solid android:color="#f7f4ef" />
+        </shape>
+    </item>
+
+</layer-list><!-- From: file:/D:/Android/AsWorkspace/TransportGas/app/src/main/res/drawable/tab_left_normal.xml -->

@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#84df2a"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="30dp"
+        android:background="#ffffff"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/distance"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_gravity="center"
+            android:background="#ffb60f"
+            android:gravity="center"
+            android:text="系统设置"
+            android:textColor="#ffffff"
+            android:textSize="35dp" />
+
+        <TextView
+            android:id="@+id/distance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:paddingBottom="8dp"
+            android:paddingTop="8dp"
+            android:text="听单模式"
+            android:textColor="#000000"
+            android:textSize="20dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioGroup
+                android:id="@+id/rg_listen"
+                android:layout_width="fill_parent"
+                android:layout_height="35.0dip"
+                android:layout_marginBottom="7.5dip"
+                android:layout_marginLeft="12.5dip"
+                android:layout_marginRight="12.5dip"
+                android:orientation="horizontal"
+                android:paddingEnd="16dp"
+                android:paddingStart="16dp">
+
+                <RadioButton
+                    android:id="@+id/rb_listen_standerd"
+                    android:layout_width="0.0dip"
+                    android:layout_height="35.0dip"
+                    android:layout_weight="1.0"
+                    android:background="@drawable/radio_topic_all_selector"
+                    android:button="@null"
+                    android:gravity="center"
+                    android:text="标准听单"
+                    android:textColor="@drawable/wp_text_selector"
+                    android:textSize="15.0sp" />
+
+                <RadioButton
+                    android:id="@+id/rb_listen_fast"
+                    android:layout_width="0.0dip"
+                    android:layout_height="35.0dip"
+                    android:layout_weight="1.0"
+                    android:background="@drawable/radio_topic_all_selector"
+                    android:button="@null"
+                    android:gravity="center"
+                    android:text="快速看单"
+                    android:textColor="@drawable/wp_text_selector"
+                    android:textSize="15.0sp" />
+            </RadioGroup>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:ellipsize="middle"
+            android:gravity="center"
+            android:paddingBottom="8dp"
+            android:paddingTop="8dp"
+            android:singleLine="true"
+            android:text="实时听单范围 (公里)"
+            android:textColor="#000000"
+            android:textSize="20dp" />
+
+        <com.android.widget.RangeBar xmlns:custom="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/rangebar1"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:paddingEnd="16dp"
+            android:paddingStart="16dp"
+            custom:tickCount="6" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:ellipsize="middle"
+            android:gravity="center"
+            android:paddingBottom="8dp"
+            android:paddingTop="16dp"
+            android:singleLine="true"
+            android:text="气瓶识别方式"
+            android:textColor="#000000"
+            android:textSize="20dp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="7.5dip"
+            android:layout_marginLeft="12.5dip"
+            android:layout_marginRight="12.5dip"
+            android:orientation="vertical"
+            android:paddingEnd="16dp"
+            android:paddingStart="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/circle_icon_tips"
+                android:drawablePadding="8dp"
+                android:ellipsize="middle"
+                android:paddingTop="4dp"
+                android:singleLine="true"
+                android:text="RFID(含一维条码)"
+                android:textColor="#000000"
+                android:textSize="16dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/circle_icon_tips"
+                android:drawablePadding="8dp"
+                android:paddingTop="4dp"
+                android:singleLine="true"
+                android:text="二维条码充装标签"
+                android:textColor="#000000"
+                android:textSize="16dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/circle_icon_tips"
+                android:drawablePadding="8dp"
+                android:ellipsize="middle"
+                android:paddingTop="4dp"
+                android:singleLine="true"
+                android:text="混合模式(RFID+二维条码)"
+                android:textColor="#000000"
+                android:textSize="16dp" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="#f7f4ef"
+            android:paddingTop="4dp">
+
+            <Button
+                android:id="@+id/back"
+                android:layout_width="100dp"
+                android:layout_height="40dp"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center"
+                android:background="@drawable/back_button_background"
+                android:gravity="center"
+                android:text="返回"
+                android:textColor="#ffc90b"
+                android:textSize="20dp" />
+        </RelativeLayout>
+    </LinearLayout>
+
+</FrameLayout><!-- From: file:/D:/Android/AsWorkspace/TransportGas/app/src/main/res/layout/transport_settings.xml -->

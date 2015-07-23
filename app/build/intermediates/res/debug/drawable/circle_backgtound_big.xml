@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="oval"
+    android:useLevel="false" >
+
+    <gradient
+        android:angle="90"
+        android:centerColor="#aaffc90b"
+        android:endColor="#ffc90b" />
+
+    <solid android:color="#ffc90b" />
+
+    <size
+        android:height="60dp"
+        android:width="60dp" />
+
+</shape><!-- From: file:/D:/Android/AsWorkspace/TransportGas/app/src/main/res/drawable/circle_backgtound_big.xml -->
