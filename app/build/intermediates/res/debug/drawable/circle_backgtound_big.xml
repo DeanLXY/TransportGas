@@ -9,5 +9,7 @@
         android:endColor="#ffc90b" />
 
     <solid android:color="#ffc90b" />
-
+    <size
+        android:width="60dp"
+        android:height="60dp"></size>
 </shape><!-- From: file:/D:/Android/AsWorkspace/TransportGas/app/src/main/res/drawable/circle_backgtound_big.xml -->

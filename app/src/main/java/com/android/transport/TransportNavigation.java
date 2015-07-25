@@ -66,14 +66,18 @@ public class TransportNavigation extends IActivity implements OnClickListener {
                 GeoLocationUtil.openGps(TransportNavigation.this);
             }
         });
-        BaiduNaviManager.getInstance().initEngine(this, getSdcardDir(), mNaviEngineInitListener,
+        initBaduEngine(false);
+        startService(new Intent(this, GeoLocationService.class));
+        btnNavigation.setOnClickListener(this);
+    }
+
+    private void initBaduEngine(boolean jump2Nav) {
+        BaiduNaviManager.getInstance().initEngine(this, getSdcardDir(), new BaiduNaviEngineInitListener(jump2Nav),
                 new LBSAuthManagerListener() {
                     @Override
                     public void onAuthResult(int status, String msg) { // status
                     }
                 });
-        startService(new Intent(this, GeoLocationService.class));
-        btnNavigation.setOnClickListener(this);
     }
 
     @Override
@@ -109,10 +113,15 @@ public class TransportNavigation extends IActivity implements OnClickListener {
         stopService(new Intent(this, GeoLocationService.class));
     }
 
-    private NaviEngineInitListener mNaviEngineInitListener = new NaviEngineInitListener() {
-
+    private class BaiduNaviEngineInitListener implements  NaviEngineInitListener{
+        boolean jump2nav;
+        public BaiduNaviEngineInitListener(boolean jump2nav){
+            this.jump2nav = jump2nav;
+        }
         public void engineInitSuccess() {
             mIsEngineInitSuccess = true;
+            if (jump2nav)
+                launchNavigator();
         }
 
         public void engineInitStart() {
@@ -120,8 +129,7 @@ public class TransportNavigation extends IActivity implements OnClickListener {
 
         public void engineInitFail() {
         }
-    };
-
+    }
     private String getSdcardDir() {
         if (Environment.getExternalStorageState().equalsIgnoreCase(Environment.MEDIA_MOUNTED)) {
             return Environment.getExternalStorageDirectory().toString();
@@ -168,11 +176,10 @@ public class TransportNavigation extends IActivity implements OnClickListener {
     @Override
     public void onClick(View v) {
         if (v == btnNavigation) {
-            if (mIsEngineInitSuccess)
-                launchNavigator();
+            if (!mIsEngineInitSuccess)
+                initBaduEngine(true);
             else
-                Toast.makeText(getApplicationContext(), "导航引擎初始化未完成", 0).show();
-
+                launchNavigator();
         }
     }
 }

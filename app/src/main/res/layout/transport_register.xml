@@ -5,9 +5,10 @@
     android:background="#84df2a"
     android:orientation="vertical">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="100dp"
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
         android:layout_marginTop="30dp"
@@ -15,7 +16,7 @@
         android:orientation="vertical">
 
         <LinearLayout
-            android:id="@+id/list"
+            android:id="@+id/ll_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
@@ -32,115 +33,130 @@
                 android:textSize="35dp" />
         </LinearLayout>
 
-        <LinearLayout
+        <ScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:orientation="horizontal">
+            android:layout_below="@id/ll_title"
+            android:fillViewport="true">
 
-            <TextView
-                android:id="@+id/tv_tip_deviceinfo"
-                style="@style/Button_fillet_button"
-                android:layout_width="0dp"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_weight="1"
-                android:text="设备信息:"
-                android:textSize="15dp" />
 
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_weight="2"
-                android:paddingEnd="10dp"
-                android:paddingStart="10dp"
-                android:text="显示设备的相关信息，包括ID、系统软件版本、APP版本"
-                android:textSize="15dp" />
-        </LinearLayout>
+                android:orientation="vertical">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:orientation="horizontal">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:orientation="horizontal">
 
-            <TextView
-                style="@style/Button_fillet_button"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_weight="1"
-                android:text="单位注册:"
-                android:textSize="15dp" />
+                    <TextView
+                        android:id="@+id/tv_tip_deviceinfo"
+                        style="@style/Button_fillet_button"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_weight="1"
+                        android:text="设备信息:"
+                        android:textSize="15dp" />
 
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_weight="2"
-                android:paddingEnd="10dp"
-                android:paddingStart="10dp"
-                android:text="输入后进行模糊查询，选择单位后显示该单位信息(配送点名称、地址、电话、授权ID等)，完成该设备单位信息的注册:"
-                android:textSize="15dp" />
-        </LinearLayout>
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_weight="2"
+                        android:paddingEnd="10dp"
+                        android:paddingStart="10dp"
+                        android:text="显示设备的相关信息，包括ID、系统软件版本、APP版本"
+                        android:textSize="15dp" />
+                </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:orientation="horizontal">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:orientation="horizontal">
 
-            <TextView
-                style="@style/Button_fillet_button"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_weight="1"
-                android:text="使用者:"
-                android:textSize="15dp" />
+                    <TextView
+                        style="@style/Button_fillet_button"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_weight="1"
+                        android:text="单位注册:"
+                        android:textSize="15dp" />
 
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_weight="2"
-                android:paddingEnd="10dp"
-                android:paddingStart="10dp"
-                android:text="询选择该单位下人员，显示人员相关信息(姓名、联系手机、身份证号、从业证书编号等)，完成使用人的注册"
-                android:textSize="15dp" />
-        </LinearLayout>
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_weight="2"
+                        android:paddingEnd="10dp"
+                        android:paddingStart="10dp"
+                        android:text="输入后进行模糊查询，选择单位后显示该单位信息(配送点名称、地址、电话、授权ID等)，完成该设备单位信息的注册:"
+                        android:textSize="15dp" />
+                </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:orientation="horizontal"
-            android:paddingBottom="8dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:orientation="horizontal">
 
-            <TextView
-                style="@style/Button_fillet_button"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_weight="1"
-                android:text="位置信息:"
-                android:textSize="15dp" />
+                    <TextView
+                        style="@style/Button_fillet_button"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_weight="1"
+                        android:text="使用者:"
+                        android:textSize="15dp" />
 
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_weight="2"
-                android:paddingEnd="10dp"
-                android:paddingStart="10dp"
-                android:text="地图选择默认位置(需要打开GPS)，以便计算听单范围"
-                android:textSize="15dp" />
-        </LinearLayout>
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_weight="2"
+                        android:paddingEnd="10dp"
+                        android:paddingStart="10dp"
+                        android:text="询选择该单位下人员，显示人员相关信息(姓名、联系手机、身份证号、从业证书编号等)，完成使用人的注册"
+                        android:textSize="15dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:orientation="horizontal"
+                    android:paddingBottom="8dp">
+
+                    <TextView
+                        style="@style/Button_fillet_button"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_weight="1"
+                        android:text="位置信息:"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_weight="2"
+                        android:paddingEnd="10dp"
+                        android:paddingStart="10dp"
+                        android:text="地图选择默认位置(需要打开GPS)，以便计算听单范围"
+                        android:textSize="15dp" />
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
             android:background="#f7f4ef"
             android:paddingTop="4dp">
 
@@ -156,6 +172,7 @@
                 android:textColor="#ffc90b"
                 android:textSize="20dp" />
         </RelativeLayout>
-    </LinearLayout>
+
+    </RelativeLayout>
 
 </FrameLayout>
