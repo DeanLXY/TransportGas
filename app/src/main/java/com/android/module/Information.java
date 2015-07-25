@@ -1,5 +1,6 @@
 package com.android.module;
 
+import android.content.ContentValues;
 import android.support.annotation.NonNull;
 
 /**
@@ -12,6 +13,8 @@ public class Information implements Comparable<Information> {
     private String orderPhoneNum;
     private String orderTime;
     private String orderContent;
+    private int orderStatus = OrderStatus.STATUS_DONOTHING.intValue();
+
 
     public String getOrderNum() {
         return orderNum;
@@ -71,6 +74,32 @@ public class Information implements Comparable<Information> {
                 ", orderTime='" + orderTime + '\'' +
                 ", orderContent='" + orderContent + '\'' +
                 '}';
+    }
+
+    public ContentValues toContentValues() {
+        ContentValues values = new ContentValues();
+        values.put("orderNum", orderNum);
+        values.put("orderAddress", orderAddress);
+        values.put("orderContacts", orderContacts);
+        values.put("orderPhoneNum", orderPhoneNum);
+        values.put("orderNum", orderNum);
+        values.put("orderTime", orderTime);
+        values.put("orderContent", orderContent);
+        values.put("orderStatus", orderStatus);
+        return values;
+    }
+
+    public enum OrderStatus {
+        STATUS_DISPATCHING(1), STATUS_DISPATCHED(2), STATUS_DONOTHING(0);
+        private int intStatus;
+
+        OrderStatus(int intStatus) {
+            this.intStatus = intStatus;
+        }
+
+        public int intValue() {
+            return this.intStatus;
+        }
     }
 
     //排序使用 距离最近在上边

@@ -3,7 +3,6 @@ package com.android.util;
 import android.database.Cursor;
 
 import com.android.annotation.DBField;
-import com.android.annotation.DBName;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;
@@ -129,10 +128,10 @@ public class CursorUtils {
         HashSet<Field> fieldSet = new HashSet<Field>();
         Field[] fields = ReflectUtils.getDeclaredFields(clazz);
         for (Field field : fields) {
-            DBField dbField = field.getAnnotation(DBField.class);
-            if (dbField != null) {
+//            DBField dbField = field.getAnnotation(DBField.class);
+//            if (dbField != null) {
                 fieldSet.add(field);
-            }
+//            }
         }
         return fieldSet.toArray(new Field[fieldSet.size()]);
     }
