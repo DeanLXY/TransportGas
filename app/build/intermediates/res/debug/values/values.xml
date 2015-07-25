@@ -245,7 +245,7 @@
         <item name="android:activityCloseEnterAnimation">@anim/activity_close_enter</item>
         <item name="android:activityCloseExitAnimation">@anim/activity_close_exit</item>
     </style>
-    <style name="AppBaseTheme" parent="Theme.AppCompat.NoActionBar"/>
+    <style name="AppBaseTheme" parent="Theme.AppCompat.Light.NoActionBar"/>
     <style name="AppTheme" parent="AppBaseTheme">
 
          <item name="colorPrimary">@color/appBackground</item>
@@ -253,8 +253,10 @@
          <item name="android:fitsSystemWindows">true</item>
          <item name="windowActionBar">false</item>
          <item name="windowNoTitle">true</item>
+        <item name="popupMenuStyle">@style/popupMenuStyle</item>
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
         <item name="android:windowNoTitle">true</item>
+
         <!-- <item name="android:windowAnimationStyle">@style/AnimationActivity</item> -->
     </style>
     <!-- From: file:/D:/Android/AsWorkspace/TransportGas/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/res/values/values.xml -->
@@ -1511,4 +1513,8 @@
     <style name="Widget.AppCompat.TextView.SpinnerItem" parent="Base.Widget.AppCompat.TextView.SpinnerItem"/>
     <style name="Widget.AppCompat.Toolbar" parent="Base.Widget.AppCompat.Toolbar"/>
     <style name="Widget.AppCompat.Toolbar.Button.Navigation" parent="RtlOverlay.Widget.AppCompat.Toolbar.Button.Navigation"/>
+    <!-- From: file:/D:/Android/AsWorkspace/TransportGas/app/src/main/res/values/styles.xml -->
+    <eat-comment/>
+    <style name="popupMenuStyle" parent="Base.Widget.AppCompat.PopupMenu.Overflow">
+    </style>
 </resources>

@@ -1,6 +1,6 @@
 <resources>
 
-    <style name="AppBaseTheme" parent="Theme.AppCompat.NoActionBar"></style>
+    <style name="AppBaseTheme" parent="Theme.AppCompat.Light.NoActionBar"></style>
 
     <!-- Application theme. -->
     <style name="AppTheme" parent="AppBaseTheme">
@@ -10,8 +10,10 @@
          <item name="android:fitsSystemWindows">true</item>
          <item name="windowActionBar">false</item>
          <item name="windowNoTitle">true</item>
+        <item name="popupMenuStyle">@style/popupMenuStyle</item>
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
         <item name="android:windowNoTitle">true</item>
+
         <!-- <item name="android:windowAnimationStyle">@style/AnimationActivity</item> -->
     </style>
 
@@ -34,5 +36,7 @@
         <!--<item name="colorPrimary">@color/appBackground</item>-->
         <!--<item name="colorPrimaryDark">@color/appBackground</item>-->
         <!--<item name="colorAccent">@color/appBackground</item>-->
+    </style>
+    <style name="popupMenuStyle" parent="Base.Widget.AppCompat.PopupMenu.Overflow">
     </style>
 </resources>
