@@ -21,53 +21,53 @@ import de.tavendo.autobahn.WebSocketException;
 public class InformationService {
 	
 
-	public List<Information> getXmlPersons() throws Exception {
-		URL url = new URL("http://192.168.1.101:8080/05.web/address.xml");
-		HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-		conn.setConnectTimeout(5000);
-		
-		int code = conn.getResponseCode();
-		if (code == 200) {
-			InputStream in = conn.getInputStream();
-			return parseXml(in);
-		}
-		
-		throw new RuntimeException("网络出错: " + code);
-	}
+//	public List<Information> getXmlPersons() throws Exception {
+//		URL url = new URL("http://192.168.1.101:8080/05.web/address.xml");
+//		HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+//		conn.setConnectTimeout(5000);
+//
+//		int code = conn.getResponseCode();
+//		if (code == 200) {
+//			InputStream in = conn.getInputStream();
+//			return parseXml(in);
+//		}
+//
+//		throw new RuntimeException("网络出错: " + code);
+//	}
 	
-	private List<Information> parseXml(InputStream in) throws Exception {
-		List<Information> list = new ArrayList<Information>();
-		Information i = null;
-		
-		XmlPullParser parser = Xml.newPullParser();
-		parser.setInput(in, "UTF-8");
-		for (int type = parser.getEventType(); type != XmlPullParser.END_DOCUMENT; type = parser.next()) {
-			if (type == XmlPullParser.START_TAG) {
-				if ("information".equals(parser.getName())) {
-					i = new Information();
-					String id = parser.getAttributeValue(0);
-					i.setId(Integer.parseInt(id));
-					list.add(i);
-				} else if ("address".equals(parser.getName())) {
-					String address = parser.nextText();
-					i.setAddress(address);
-				} else if ("order".equals(parser.getName())) {
-					String order = parser.nextText();
-					i.setOrder(order);
-				}else if ("time".equals(parser.getName())) {
-					String time = parser.nextText();
-					i.setTime(time);
-				}else if ("consumer".equals(parser.getName())) {
-					String consumer = parser.nextText();
-					i.setConsumer(consumer);
-				}else if ("telephony".equals(parser.getName())) {
-					String telephony = parser.nextText();
-					i.setTelephony(telephony);
-				}
-		    }
-		}
-		return list;
-	}
+//	private List<Information> parseXml(InputStream in) throws Exception {
+//		List<Information> list = new ArrayList<Information>();
+//		Information i = null;
+//
+//		XmlPullParser parser = Xml.newPullParser();
+//		parser.setInput(in, "UTF-8");
+//		for (int type = parser.getEventType(); type != XmlPullParser.END_DOCUMENT; type = parser.next()) {
+//			if (type == XmlPullParser.START_TAG) {
+//				if ("information".equals(parser.getName())) {
+//					i = new Information();
+//					String id = parser.getAttributeValue(0);
+//					i.setId(Integer.parseInt(id));
+//					list.add(i);
+//				} else if ("address".equals(parser.getName())) {
+//					String address = parser.nextText();
+//					i.setAddress(address);
+//				} else if ("order".equals(parser.getName())) {
+//					String order = parser.nextText();
+//					i.setOrder(order);
+//				}else if ("time".equals(parser.getName())) {
+//					String time = parser.nextText();
+//					i.setTime(time);
+//				}else if ("consumer".equals(parser.getName())) {
+//					String consumer = parser.nextText();
+//					i.setConsumer(consumer);
+//				}else if ("telephony".equals(parser.getName())) {
+//					String telephony = parser.nextText();
+//					i.setTelephony(telephony);
+//				}
+//		    }
+//		}
+//		return list;
+//	}
 	
 	private final WebSocketConnection mConnection = new WebSocketConnection();
 	public void getWebSocketPersons() throws Exception {
@@ -115,12 +115,12 @@ public class InformationService {
 			i = new Information();
 		
 			int id = 1;
-			i.setId(id++);
-			i.setAddress("北京市海淀区西北旺路东馨园小区6号楼3单元501");
-			i.setOrder(in);
-			i.setTime("2015-5-5");
-			i.setConsumer("张女士");
-			i.setTelephony("16709338922");
+//			i.setId(id++);
+//			i.setAddress("北京市海淀区西北旺路东馨园小区6号楼3单元501");
+//			i.setOrder(in);
+//			i.setTime("2015-5-5");
+//			i.setConsumer("张女士");
+//			i.setTelephony("16709338922");
 			list.add(i);
 		}
 		return list;

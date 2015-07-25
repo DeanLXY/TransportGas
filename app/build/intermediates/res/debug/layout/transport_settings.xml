@@ -12,7 +12,7 @@
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
         android:layout_marginTop="30dp"
-        android:background="#ffffff"
+        android:background="@drawable/abc_popup_background_mtrl_mult"
         android:orientation="vertical">
 
         <TextView
@@ -27,7 +27,6 @@
             android:textSize="35dp" />
 
         <TextView
-            android:id="@+id/distance"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"

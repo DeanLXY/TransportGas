@@ -6,7 +6,6 @@
     android:orientation="vertical" >
 
     <LinearLayout
-        android:id="@+id/list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginBottom="100dp"
@@ -27,9 +26,4 @@
             android:textColor="#ffffff"
             android:textSize="35dp" />
     </LinearLayout>
-
-
-
-
-
 </FrameLayout><!-- From: file:/D:/Android/AsWorkspace/TransportGas/app/src/main/res/layout/transport_sales.xml -->

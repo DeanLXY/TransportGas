@@ -2,34 +2,30 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#84df2a"
-    android:orientation="vertical" >
+    android:background="@color/appBackground"
+    android:orientation="vertical">
 
     <LinearLayout
-        android:id="@+id/list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginBottom="100dp"
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
         android:layout_marginTop="30dp"
-        android:background="#ffffff"
-        android:orientation="vertical" >
+        android:background="@drawable/abc_popup_background_mtrl_mult"
+        android:orientation="vertical">
 
         <TextView
             android:id="@+id/distance"
             android:layout_width="match_parent"
             android:layout_height="80dp"
             android:layout_gravity="center"
-            android:gravity="center"
             android:background="#ffb60f"
+            android:gravity="center"
             android:text="确认支付"
             android:textColor="#ffffff"
             android:textSize="35dp" />
     </LinearLayout>
-
-
-
 
 
 </FrameLayout>

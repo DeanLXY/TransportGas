@@ -81,12 +81,12 @@ public class CoreService extends Service {
 					if (payload != null) {
 						i = new Information();
 						int id = 1;
-						i.setId(id++);
-						i.setAddress("北京市海淀区西北旺路东馨园小区6号楼3单元501");
-						i.setOrder(payload);
-						i.setTime("2015-5-5");
-						i.setConsumer("张女士");
-						i.setTelephony("16709338922");
+//						i.setId(id++);
+//						i.setAddress("北京市海淀区西北旺路东馨园小区6号楼3单元501");
+//						i.setOrder(payload);
+//						i.setTime("2015-5-5");
+//						i.setConsumer("张女士");
+//						i.setTelephony("16709338922");
 						webData.add(i);
 					}
 				}

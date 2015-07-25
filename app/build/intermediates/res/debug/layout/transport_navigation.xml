@@ -3,23 +3,25 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#84df2a"
-    android:orientation="vertical" >
+    android:orientation="vertical">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="100dp"
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
         android:layout_marginTop="30dp"
-        android:orientation="vertical" >
+        android:background="@drawable/abc_popup_background_mtrl_mult"
+        android:orientation="vertical">
 
         <LinearLayout
-            android:paddingBottom="24dp"
             android:id="@+id/list"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#ffffff"
-            android:orientation="vertical" >
+            android:orientation="vertical"
+            android:paddingBottom="24dp">
 
             <TextView
                 android:id="@+id/distance"
@@ -51,7 +53,7 @@
                 android:layout_marginTop="4dp"
                 android:minHeight="82dp"
                 android:orientation="horizontal"
-                android:paddingStart="10dp" >
+                android:paddingStart="10dp">
 
                 <ImageView
                     android:layout_width="15dp"
@@ -72,7 +74,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:paddingStart="10dp"
-                android:paddingTop="16dp" >
+                android:paddingTop="16dp">
 
                 <TextView
                     android:id="@+id/tv_longitude"
@@ -100,13 +102,13 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="8dp"
                 android:background="@drawable/fillet_button_background"
+                android:checked="false"
                 android:paddingEnd="10dp"
                 android:paddingStart="10dp"
                 android:textColor="#000000"
                 android:textOff="GPS状态关"
                 android:textOn="GPS状态开"
-                android:textSize="15dp"
-                android:checked="false" />
+                android:textSize="15dp" />
 
             <Button
                 android:id="@+id/start_navigation"
@@ -125,8 +127,9 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
             android:background="#f7f4ef"
-            android:paddingTop="4dp" >
+            android:paddingTop="4dp">
 
             <Button
                 android:id="@+id/back"
@@ -140,6 +143,6 @@
                 android:textColor="#ffc90b"
                 android:textSize="20dp" />
         </RelativeLayout>
-    </LinearLayout>
+    </RelativeLayout>
 
 </FrameLayout><!-- From: file:/D:/Android/AsWorkspace/TransportGas/app/src/main/res/layout/transport_navigation.xml -->

@@ -2,31 +2,8 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#84df2a"
-    android:orientation="vertical" >
-
-    <LinearLayout
-        android:id="@+id/list"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginBottom="100dp"
-        android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp"
-        android:layout_marginTop="30dp"
-        android:background="#ffffff"
-        android:orientation="vertical" >
-
-        <TextView
-            android:id="@+id/tv_distance"
-            android:layout_width="match_parent"
-            android:layout_height="80dp"
-            android:layout_gravity="center"
-            android:background="#ffb60f"
-            android:gravity="center"
-            android:text="距离您X公里内"
-            android:textColor="#ffffff"
-            android:textSize="30dp" />
-    </LinearLayout>
+    android:background="@color/appBackground"
+    android:orientation="vertical">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -34,31 +11,56 @@
         android:layout_marginBottom="100dp"
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
-        android:layout_marginTop="110dp" >
+        android:layout_marginTop="30dp"
+        android:background="@drawable/abc_popup_background_mtrl_mult">
 
-        <ListView
-            android:id="@+id/listView"
+        <LinearLayout
+            android:id="@+id/ll_title"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" >
-        </ListView>
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_distance"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_gravity="center"
+                android:background="#ffb60f"
+                android:gravity="center"
+                android:text="距离您X公里内"
+                android:textColor="#ffffff"
+                android:textSize="30dp" />
+        </LinearLayout>
 
         <RelativeLayout
+            android:id="@+id/ll_list"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_alignParentBottom="true"
-            android:background="#f7f4ef" >
+            android:layout_height="match_parent"
+            android:layout_below="@id/ll_title">
 
-            <Button
-                android:id="@+id/reFresh"
-                android:layout_width="100dp"
-                android:layout_height="40dp"
-                android:layout_centerInParent="true"
-                android:layout_gravity="center"
-                android:background="@drawable/back_button_background"
-                android:gravity="center"
-                android:text="刷新"
-                android:textColor="#ffc90b"
-                android:textSize="20dp" />
+            <ListView
+                android:id="@+id/listView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"></ListView>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_alignParentBottom="true"
+                android:background="#f7f4ef">
+
+                <Button
+                    android:id="@+id/reFresh"
+                    android:layout_width="100dp"
+                    android:layout_height="40dp"
+                    android:layout_centerInParent="true"
+                    android:layout_gravity="center"
+                    android:background="@drawable/back_button_background"
+                    android:gravity="center"
+                    android:text="刷新"
+                    android:textColor="#ffc90b"
+                    android:textSize="20dp" />
+            </RelativeLayout>
         </RelativeLayout>
     </RelativeLayout>
 
@@ -68,13 +70,13 @@
         android:layout_height="100dp"
         android:layout_gravity="bottom"
         android:gravity="center"
-        android:orientation="horizontal" >
+        android:orientation="horizontal">
 
         <RelativeLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:orientation="horizontal" >
+            android:orientation="horizontal">
 
             <ToggleButton
                 android:id="@+id/open_gps"
@@ -93,7 +95,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:orientation="horizontal" >
+            android:orientation="horizontal">
 
             <Button
                 android:id="@+id/grab_list"
@@ -112,7 +114,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:orientation="horizontal" >
+            android:orientation="horizontal">
 
             <ToggleButton
                 android:id="@+id/voice_broadcast"

@@ -30,7 +30,7 @@ public class DbHelper {
     }
 
     public void saveOrUpdateInfomation(Information information) {
-        insert("orderInfo", "", information.toContentValues());
+        insert("orderInfo", null, information.toContentValues());
     }
 
     // ---------------------------------------------------------------------

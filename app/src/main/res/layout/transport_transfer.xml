@@ -3,22 +3,22 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#84df2a"
-    android:orientation="vertical" >
+    android:orientation="vertical">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="100dp"
         android:layout_marginLeft="30dp"
-        android:orientation="vertical"
         android:layout_marginRight="30dp"
-        android:layout_marginTop="30dp" >
+        android:layout_marginTop="30dp"
+        android:background="@drawable/abc_popup_background_mtrl_mult">
 
         <LinearLayout
-            android:id="@+id/list"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#ffffff"
-            android:orientation="vertical" >
+            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/distance"
@@ -34,13 +34,13 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="30dp" >
+                android:layout_marginTop="30dp">
 
                 <RelativeLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:orientation="horizontal" >
+                    android:orientation="horizontal">
 
                     <Button
                         android:id="@+id/turn_bottle"
@@ -59,7 +59,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:orientation="horizontal" >
+                    android:orientation="horizontal">
 
                     <Button
                         android:id="@+id/collect_bottle"
@@ -78,7 +78,7 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal" >
+                android:orientation="horizontal">
 
                 <Button
                     android:id="@+id/safe_inform"
@@ -96,7 +96,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal" >
+                android:orientation="horizontal">
 
                 <ToggleButton
                     android:id="@+id/GPS_state"
@@ -131,7 +131,8 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:background="#f7f4ef" >
+            android:layout_alignParentBottom="true"
+            android:background="#f7f4ef">
 
             <Button
                 android:id="@+id/back"
@@ -145,6 +146,6 @@
                 android:textColor="#ffc90b"
                 android:textSize="20dp" />
         </RelativeLayout>
-    </LinearLayout>
+    </RelativeLayout>
 
 </FrameLayout>
