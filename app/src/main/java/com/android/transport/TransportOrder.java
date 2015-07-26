@@ -26,6 +26,7 @@ import com.android.module.Information;
 import com.android.util.ConfigManager;
 import com.android.util.DialogUtils;
 import com.android.util.GeoLocationUtil;
+import com.android.websocket.WebSocketManager;
 import com.example.transportgas.R;
 
 //配送接单
@@ -86,6 +87,19 @@ public class TransportOrder extends IActivity implements OnClickListener {
                 gpsDialog.dismiss();
         }
     }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        WebSocketManager.getManager(this).connect();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        WebSocketManager.getManager(this).disConnect();
+    }
+
     @Override
     protected void onResume() {
         super.onResume();

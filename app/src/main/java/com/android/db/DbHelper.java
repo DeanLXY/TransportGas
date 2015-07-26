@@ -8,6 +8,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import com.android.Constants;
 import com.android.module.Information;
+import com.android.util.CursorUtils;
 
 public class DbHelper {
     private DbOpenHelper helper;
@@ -29,8 +30,16 @@ public class DbHelper {
         return mHelper;
     }
 
-    public void saveOrUpdateInfomation(Information information) {
-        insert("orderInfo", null, information.toContentValues());
+    public long saveOrUpdateInfomation(Information information) {
+        if (information == null) return 0;
+        Cursor cursor = query("orderInfo", null, "orderNum=?", new String[]{information.getOrderNum()}, null, null, null);
+        if (cursor.moveToFirst()) {
+            CursorUtils.closeCursor(cursor);
+            return update("orderInfo", information.toContentValues(), "orderNum=?", new String[]{information.getOrderNum()});
+        } else {
+            return insert("orderInfo", null, information.toContentValues());
+        }
+
     }
 
     // ---------------------------------------------------------------------

@@ -57,7 +57,6 @@ public class GeoLocationService extends Service {
 
 		@Override
 		public void onReceivePoi(BDLocation arg0) {
-
 		}
 
 	}
