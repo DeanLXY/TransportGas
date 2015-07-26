@@ -96,9 +96,11 @@ public class CursorUtils {
             DBField dbField = field.getAnnotation(DBField
                     .class);
             if (dbField == null) {
-                continue;
+                name = field.getName();
+            }else{
+                name = dbField.value();
             }
-            name = dbField.value();
+
             int columnIndex = cursor.getColumnIndex(name);
             if (columnIndex == -1) {
                 continue;

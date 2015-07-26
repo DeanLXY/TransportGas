@@ -22,6 +22,7 @@ import com.android.adapter.TransportOrderAdapter;
 import com.android.annotation.ContentView;
 import com.android.annotation.ViewId;
 import com.android.application.PortalApp;
+import com.android.db.DbHelper;
 import com.android.module.Information;
 import com.android.util.ConfigManager;
 import com.android.util.DialogUtils;
@@ -69,6 +70,9 @@ public class TransportOrder extends IActivity implements OnClickListener {
         mRefresh.setOnClickListener(this);
         list = new ArrayList<Integer>();
         adapter = new TransportOrderAdapter(this);
+        List<Information> dbInfomations = DbHelper.getInstance(this).queryInfomations();
+        if (dbInfomations != null)
+            mInfomationList.addAll(dbInfomations);
         adapter.setData(mInfomationList);
         mListView.setAdapter(adapter);
         mDistance.setText(String.format("距离您%d公里内", ConfigManager.getInstance(this).getListenRange(3)));
@@ -105,6 +109,7 @@ public class TransportOrder extends IActivity implements OnClickListener {
         super.onResume();
         onGpsStatusChanged(GeoLocationUtil.isGpsOpen(this));
     }
+
     @Override
     public void onGpsStatusChanged(boolean isOpen) {
         super.onGpsStatusChanged(isOpen);

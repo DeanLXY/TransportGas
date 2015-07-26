@@ -114,10 +114,6 @@
         <service android:name="com.android.service.GeoLocationService" >
         </service>
         <service
-            android:name="com.android.service.CoreService"
-            android:exported="false" >
-        </service>
-        <service
             android:name="com.baidu.navi.location.f"
             android:enabled="true"
             android:process=":remote" />

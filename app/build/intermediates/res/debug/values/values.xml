@@ -248,8 +248,10 @@
     <style name="AppBaseTheme" parent="Theme.AppCompat.Light.NoActionBar"/>
     <style name="AppTheme" parent="AppBaseTheme">
 
-         <item name="colorPrimary">@color/appBackground</item>
-         <item name="colorPrimaryDark">@color/appBackground</item>
+         <!--<item name="colorPrimary">@color/appBackground</item>-->
+         <!--<item name="colorPrimaryDark">@color/appBackground</item>-->
+        <item name="colorPrimary">#0288D1</item>
+        <item name="colorPrimaryDark">#0277BD</item>
          <item name="android:fitsSystemWindows">true</item>
          <item name="windowActionBar">false</item>
          <item name="windowNoTitle">true</item>

@@ -29,15 +29,19 @@ public class WebSocketConnectListener extends WebSocketConnectionHandler {
     public void onClose(int code, String reason) {
         super.onClose(code, reason);
         LogUtils.d("%s","WebSocketConnectListener lost");
+        Information information = new Information();
+        information.setOrderNum("0000001");
+        DbHelper.getInstance(context).saveOrUpdateInfomation(information);
     }
 
     @Override
     public void onTextMessage(String payload) {
         super.onTextMessage(payload);
-
-        long effect = DbHelper.getInstance(context).saveOrUpdateInfomation(new Information());
+        Information information = new Information();
+        information.setOrderNum("00000012");
+        long effect = DbHelper.getInstance(context).saveOrUpdateInfomation(information);
         if(effect != -1){
-            AppUtil.onWebSocketDataChange(new Information());
+            AppUtil.onWebSocketDataChange(information);
         }
     }
 

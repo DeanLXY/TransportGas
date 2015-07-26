@@ -239,17 +239,11 @@ service#com.android.service.GeoLocationService
 ADDED from AndroidManifest.xml:112:9
 	android:name
 		ADDED from AndroidManifest.xml:112:18
-service#com.android.service.CoreService
+service#com.baidu.navi.location.f
 ADDED from AndroidManifest.xml:114:9
-	android:exported
+	android:process
+		ADDED from AndroidManifest.xml:117:13
+	android:enabled
 		ADDED from AndroidManifest.xml:116:13
 	android:name
 		ADDED from AndroidManifest.xml:115:13
-service#com.baidu.navi.location.f
-ADDED from AndroidManifest.xml:118:9
-	android:process
-		ADDED from AndroidManifest.xml:121:13
-	android:enabled
-		ADDED from AndroidManifest.xml:120:13
-	android:name
-		ADDED from AndroidManifest.xml:119:13

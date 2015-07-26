@@ -10,6 +10,8 @@ import com.android.Constants;
 import com.android.module.Information;
 import com.android.util.CursorUtils;
 
+import java.util.List;
+
 public class DbHelper {
     private DbOpenHelper helper;
     private static DbHelper mHelper = null;
@@ -39,7 +41,13 @@ public class DbHelper {
         } else {
             return insert("orderInfo", null, information.toContentValues());
         }
+    }
 
+    public List<Information> queryInfomations() {
+        Cursor cursor = query("orderInfo", null, null, null, null, null, null);
+        List<Information> results = CursorUtils.getBeanListFromCursor(Information.class, cursor);
+        CursorUtils.closeCursor(cursor);
+        return  results;
     }
 
     // ---------------------------------------------------------------------
@@ -148,13 +156,14 @@ public class DbHelper {
             super(context, name, null, 1);
         }
 
-        private final String ORDERTABLECREATESQL = "CREATE TABLE orderInfo IF NOT EXISTS(_id integer primary key autoincrement," +//
+        private final String ORDERTABLECREATESQL = "CREATE TABLE orderInfo(_id integer primary key autoincrement," +//
                 "orderNum varchar(100)," +//
                 "orderAddress varchar(200) NOT NULL," +//
                 "orderContacts varchar(200) NOT NULL," +//
                 "orderPhoneNum varchar(200) NOT NULL," +//
                 "orderTime varchar(200) NOT NULL," +//
-                "orderContent varchar(200) NOT NULL" +//
+                "orderContent varchar(200) NOT NULL," +//
+                "orderStatus varchar(20) NOT NULL" +//
                 ")";
 
 
