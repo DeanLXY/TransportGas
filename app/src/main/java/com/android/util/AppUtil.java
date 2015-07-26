@@ -1,11 +1,10 @@
 package com.android.util;
 
 import java.lang.ref.SoftReference;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 
-import com.android.module.Information;
+import com.android.module.Order;
 import com.android.transport.IActivity;
 
 public class AppUtil {
@@ -34,7 +33,7 @@ public class AppUtil {
 		}
 	}
 
-	public static void onWebSocketDataChange(Information info) {
+	public static void onWebSocketDataChange(Order info) {
 		for (SoftReference<IActivity> sr : taskList) {
 			if (sr.get() != null) {
 				sr.get().onWebSocketDataChange(info);

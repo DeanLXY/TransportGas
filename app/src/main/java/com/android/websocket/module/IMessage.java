@@ -27,7 +27,7 @@ public abstract class IMessage {
     //    private String mediaId;
     private String thumbMediaId;
     //    private String format;
-    private String recognition;
+//    private String recognition;
 
     public String getOpenId() {
         return openId;
@@ -109,13 +109,6 @@ public abstract class IMessage {
         this.thumbMediaId = thumbMediaId;
     }
 
-    public String getRecognition() {
-        return recognition;
-    }
-
-    public void setRecognition(String recognition) {
-        this.recognition = recognition;
-    }
 
     @Override
     public boolean equals(Object o) {
@@ -164,5 +157,26 @@ public abstract class IMessage {
         } else if (value instanceof Boolean) {
             cvs.put(name, MathUtils.parseBoolean(value.toString()));
         }
+    }
+
+    public static Class<? extends IMessage> getMessageClassByMsgtype(String msgType) {
+        Class<? extends IMessage> clazz = null;
+        switch (msgType) {
+            case "text":
+                clazz = TextMessage.class;
+                break;
+            case "voice":
+                clazz = VoiceMessage.class;
+                break;
+            case "image":
+                clazz = ImageMessage.class;
+                break;
+            case "location":
+                clazz = LocationMessage.class;
+                break;
+            default:
+               throw new RuntimeException(msgType +"  unsupport msgtype!!");
+        }
+        return clazz;
     }
 }

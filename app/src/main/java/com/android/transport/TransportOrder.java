@@ -23,7 +23,7 @@ import com.android.annotation.ContentView;
 import com.android.annotation.ViewId;
 import com.android.application.PortalApp;
 import com.android.db.DbHelper;
-import com.android.module.Information;
+import com.android.module.Order;
 import com.android.util.ConfigManager;
 import com.android.util.DialogUtils;
 import com.android.util.GeoLocationUtil;
@@ -57,7 +57,7 @@ public class TransportOrder extends IActivity implements OnClickListener {
     private TransportOrderAdapter adapter;
 
     private ArrayList<Integer> list; // listView的集合数据
-    private List<Information> mInfomationList = new ArrayList<Information>();
+    private List<Order> mInfomationList = new ArrayList<Order>();
     private AlertDialog gpsDialog;
 
     @Override
@@ -70,7 +70,7 @@ public class TransportOrder extends IActivity implements OnClickListener {
         mRefresh.setOnClickListener(this);
         list = new ArrayList<Integer>();
         adapter = new TransportOrderAdapter(this);
-        List<Information> dbInfomations = DbHelper.getInstance(this).queryInfomations();
+        List<Order> dbInfomations = DbHelper.getInstance(this).queryInfomations();
         if (dbInfomations != null)
             mInfomationList.addAll(dbInfomations);
         adapter.setData(mInfomationList);
@@ -146,7 +146,7 @@ public class TransportOrder extends IActivity implements OnClickListener {
     }
 
     @Override
-    public void onWebSocketDataChange(Information info) {
+    public void onWebSocketDataChange(Order info) {
         super.onWebSocketDataChange(info);
         mInfomationList.add(info);
         Collections.sort(mInfomationList);
@@ -159,8 +159,8 @@ public class TransportOrder extends IActivity implements OnClickListener {
         r.play();
     }
 
-    abstract class OrderTask<Params> extends AsyncTask<Params, Void, List<Information>> {
-        public final AsyncTask<Params, Void, List<Information>> excuteProxy(Params... params) {
+    abstract class OrderTask<Params> extends AsyncTask<Params, Void, List<Order>> {
+        public final AsyncTask<Params, Void, List<Order>> excuteProxy(Params... params) {
             if (NetUtil.checkNet(PortalApp.getInstance())) {
                 return execute(params);
             } else {

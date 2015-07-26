@@ -6,6 +6,7 @@ package com.android.websocket.module;
 public class VoiceMessage extends IMessage {
     private String mediaId;
     private String format; //amr
+    private String recognition;
 
     public VoiceMessage() {
         setMsgType(MsgType.VOICE.value());
@@ -25,5 +26,13 @@ public class VoiceMessage extends IMessage {
 
     public void setFormat(String format) {
         this.format = format;
+    }
+
+    public String getRecognition() {
+        return recognition;
+    }
+
+    public void setRecognition(String recognition) {
+        this.recognition = recognition;
     }
 }

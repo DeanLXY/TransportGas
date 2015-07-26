@@ -7,10 +7,6 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 import com.android.Constants;
-import com.android.module.Information;
-import com.android.util.CursorUtils;
-
-import java.util.List;
 
 public class DbHelper {
     private DbOpenHelper helper;
@@ -31,25 +27,6 @@ public class DbHelper {
         }
         return mHelper;
     }
-
-    public long saveOrUpdateInfomation(Information information) {
-        if (information == null) return 0;
-        Cursor cursor = query("orderInfo", null, "orderNum=?", new String[]{information.getOrderNum()}, null, null, null);
-        if (cursor.moveToFirst()) {
-            CursorUtils.closeCursor(cursor);
-            return update("orderInfo", information.toContentValues(), "orderNum=?", new String[]{information.getOrderNum()});
-        } else {
-            return insert("orderInfo", null, information.toContentValues());
-        }
-    }
-
-    public List<Information> queryInfomations() {
-        Cursor cursor = query("orderInfo", null, null, null, null, null, null);
-        List<Information> results = CursorUtils.getBeanListFromCursor(Information.class, cursor);
-        CursorUtils.closeCursor(cursor);
-        return  results;
-    }
-
     // ---------------------------------------------------------------------
     public synchronized void execSQL(String sql) {
         SQLiteDatabase db = getDatabase();
@@ -156,21 +133,52 @@ public class DbHelper {
             super(context, name, null, 1);
         }
 
-        private final String ORDERTABLECREATESQL = "CREATE TABLE orderInfo(_id integer primary key autoincrement," +//
-                "orderNum varchar(100)," +//
-                "orderAddress varchar(200) NOT NULL," +//
-                "orderContacts varchar(200) NOT NULL," +//
-                "orderPhoneNum varchar(200) NOT NULL," +//
-                "orderTime varchar(200) NOT NULL," +//
-                "orderContent varchar(200) NOT NULL," +//
-                "orderStatus varchar(20) NOT NULL" +//
+        private final String CREATETABLEMESSAGE = "CREATE TABLE message(_id integer primary key autoincrement," +//
+                "open_id varchar(100)," +//
+                "create_time varchar(200)," +//
+                "msg_type varchar(200)," +//
+                "msg_id varchar(200)," +//
+                "content varchar(200)," +//
+                "lng varchar(200)," +//
+                "lat varchar(20)," +//
+                "label varchar(20)," +//
+                "scale varchar(20)," +//
+                "pic_url varchar(20)," +//
+                "title varchar(200)," +//
+                "description varchar(200)," +//
+                "url varchar(200)," +//
+                "media_id varchar(200)," +//
+                "thumb_media_id varchar(200)," +//
+                "format varchar(200)," +//
+                "recognition varchar(200)" +//
+                ")";
+        private final String CREATETABLEORDER = "CREATE TABLE orderInfo(_id integer primary key autoincrement," +//
+                "open_id varchar(100)," +//
+                "status varchar(100)," +//
+                "order_time varchar(100)," +//
+                "end_time varchar(100)," +//
+                "name varchar(100)," +//
+                "tel varchar(100)," +//
+                "type varchar(100)," +//
+                "address varchar(100)," +//
+                "sub_address varchar(100)," +//
+                "img varchar(100)," +//
+                "message varchar(200)," +//
+                "voice varchar(100)," +//
+                "new_img varchar(100)," +//
+                "sender varchar(100)," +//
+                "num varchar(100)," +//
+                "remark varchar(200)," +//
+                "location varchar(100)" +//
                 ")";
 
 
         @Override
         public void onCreate(SQLiteDatabase db) {
-            db.execSQL(ORDERTABLECREATESQL);
-            db.execSQL("CREATE INDEX orderIndex ON orderInfo (orderNum)");
+            db.execSQL(CREATETABLEMESSAGE);
+            db.execSQL(CREATETABLEORDER);
+            db.execSQL("CREATE INDEX messageIndex ON message (open_id)");
+            db.execSQL("CREATE INDEX orderIndex ON orderInfo (open_id)");
 
         }
 

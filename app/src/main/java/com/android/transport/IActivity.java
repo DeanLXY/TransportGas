@@ -2,10 +2,9 @@ package com.android.transport;
 
 import com.android.annotation.ContentView;
 import com.android.annotation.util.ViewFinderUtils;
-import com.android.module.Information;
+import com.android.module.Order;
 import com.android.util.AppUtil;
 
-import android.app.Activity;
 import android.content.IntentFilter;
 import android.location.LocationManager;
 import android.os.Bundle;
@@ -43,7 +42,7 @@ public abstract class IActivity extends AppCompatActivity {
 	public void onLocationChange(double longitude, double latitude) {
 	}
 
-	public void onWebSocketDataChange(Information info) {
+	public void onWebSocketDataChange(Order info) {
 		
 	}
 
