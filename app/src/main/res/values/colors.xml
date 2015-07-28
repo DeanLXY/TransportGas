@@ -2,6 +2,7 @@
 <resources>
 
     <color name="appBackground">#84df2a</color>
+    <color name="appTitleBackground">#ffb60f</color>
     <color name="grey" >#ffbebebe</color>
     <color name="dark_grey">#FF080808</color>
     <color name="light_grey">#ffbebebe</color>

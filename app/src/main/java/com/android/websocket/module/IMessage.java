@@ -142,7 +142,7 @@ public abstract class IMessage {
     private void addFieldToContentValues(ContentValues cvs, Field field) throws Exception {
         DBField messageField = field.getAnnotation(DBField.class);
         String name = field.getName();
-        if (messageField == null) {
+        if (messageField != null) {
             name = messageField.value();
         }
 

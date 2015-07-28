@@ -44,7 +44,6 @@ public abstract class IActivity extends AppCompatActivity {
 	}
 
 	public void onWebSocketDataChange(Order info) {
-		
 	}
 
 	public void onGpsStatusChanged(boolean isOpen) {

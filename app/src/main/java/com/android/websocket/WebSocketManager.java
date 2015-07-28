@@ -17,6 +17,7 @@ public class WebSocketManager {
     private WebSocketConnectListener connectListener;
     private Context context;
     private WebSocketManager(Context contxt) {
+        this.context = contxt;
         mConnection = new WebSocketConnection();
     }
 

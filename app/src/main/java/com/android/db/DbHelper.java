@@ -7,6 +7,11 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 import com.android.Constants;
+import com.android.module.Order;
+import com.android.util.CursorUtils;
+import com.android.util.LogUtils;
+
+import java.util.List;
 
 public class DbHelper {
     private DbOpenHelper helper;
@@ -19,6 +24,7 @@ public class DbHelper {
 
 
     public static DbHelper getInstance(Context context) {
+        LogUtils.e("context = %s",""+context);
         if (mHelper == null) {
             synchronized (DbHelper.class) {
                 if (mHelper == null)
@@ -27,6 +33,34 @@ public class DbHelper {
         }
         return mHelper;
     }
+
+    //------------------------------------------------------------------
+    public long saveOrderInfo(Order order) {
+        long result = -1;
+        try {
+            String openId = order.getOpenId();
+            boolean bExists;
+            Cursor query = query(DbOpenHelper.TABLEORDER, null, "open_id=?", new String[]{openId}, null, null, null);
+            bExists = query.moveToFirst();
+            CursorUtils.closeCursor(query);
+            if (bExists) {
+                LogUtils.d("%s", "order_table openId exists. May update status  ");
+            } else {
+                result = insert(DbOpenHelper.TABLEORDER, null, order.toContentValues());
+            }
+        } catch (Exception e) {
+            LogUtils.e("%s",e.getMessage());
+        }
+        return result;
+    }
+    public List<Order> queryOrders() {
+        Cursor query = query(DbOpenHelper.TABLEORDER, null, null, null, null, null, null);
+        List<Order> dbOrders = CursorUtils.getBeanListFromCursor(Order.class, query);
+        CursorUtils.closeCursor(query);
+        return dbOrders;
+    }
+
+
     // ---------------------------------------------------------------------
     public synchronized void execSQL(String sql) {
         SQLiteDatabase db = getDatabase();
@@ -111,7 +145,12 @@ public class DbHelper {
 
     public synchronized SQLiteDatabase getDatabase() {
         if (database == null || !database.isOpen()) {
-            database = helper.getWritableDatabase();
+            LogUtils.e("%s","before database = "+database);
+            try {
+                database = helper.getWritableDatabase();
+            }catch (Exception e){
+                LogUtils.e("%s","after database = "+database+">>>e"+e.getMessage());
+            }
         }
         return database;
     }
@@ -127,13 +166,17 @@ public class DbHelper {
         mHelper = null;
     }
 
+
+
     private class DbOpenHelper extends SQLiteOpenHelper {
+        public static final String TABLEMESSAGE = "message";
+        public static final String TABLEORDER = "orderInfo";
 
         public DbOpenHelper(Context context, String name) {
             super(context, name, null, 1);
         }
 
-        private final String CREATETABLEMESSAGE = "CREATE TABLE message(_id integer primary key autoincrement," +//
+        private final String CREATETABLEMESSAGE = "CREATE TABLE " + TABLEMESSAGE + "(_id integer primary key autoincrement," +//
                 "open_id varchar(100)," +//
                 "create_time varchar(200)," +//
                 "msg_type varchar(200)," +//
@@ -152,7 +195,7 @@ public class DbHelper {
                 "format varchar(200)," +//
                 "recognition varchar(200)" +//
                 ")";
-        private final String CREATETABLEORDER = "CREATE TABLE orderInfo(_id integer primary key autoincrement," +//
+        private final String CREATETABLEORDER = "CREATE TABLE " + TABLEORDER + "(_id integer primary key autoincrement," +//
                 "open_id varchar(100)," +//
                 "status varchar(100)," +//
                 "order_time varchar(100)," +//

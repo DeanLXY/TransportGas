@@ -1,8 +1,12 @@
 package com.android.module;
 
+import android.content.ContentValues;
 import android.support.annotation.NonNull;
 
 import com.android.annotation.DBField;
+import com.android.util.MathUtils;
+
+import java.lang.reflect.Field;
 
 /**
  * @author Administrator
@@ -164,6 +168,35 @@ public class Order implements Comparable<Order> {
     public void setLocation(String location) {
         this.location = location;
     }
+
+    public ContentValues toContentValues() throws Exception {
+        ContentValues cvs = new ContentValues();
+        Field[] fields = getClass().getDeclaredFields();
+        for (Field field : fields) {
+            addFieldToContentValues(cvs, field);
+        }
+        return cvs;
+    }
+
+    private void addFieldToContentValues(ContentValues cvs, Field field) throws Exception {
+        DBField messageField = field.getAnnotation(DBField.class);
+        String name = field.getName();
+        if (messageField != null) {
+            name = messageField.value();
+        }
+        field.setAccessible(true);
+        Object value = field.get(this);
+        if (value instanceof String) {
+            cvs.put(name, value.toString());
+        } else if (value instanceof Integer) {
+            cvs.put(name, MathUtils.parseInt(value.toString()));
+        } else if (value instanceof Long) {
+            cvs.put(name, MathUtils.parseLong(value.toString()));
+        } else if (value instanceof Boolean) {
+            cvs.put(name, MathUtils.parseBoolean(value.toString()));
+        }
+    }
+
 
     public enum OrderStatus {
         STATUS_DISPATCHING(2), STATUS_DISPATCHED(3), STATUS_RESERVATION(1), STATUS_RECORDING(0);

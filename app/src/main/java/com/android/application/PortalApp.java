@@ -21,7 +21,6 @@ public class PortalApp extends Application {
     }
 
     public static Context getInstance() {
-
         return instance;
     }
 

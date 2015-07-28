@@ -1,5 +1,6 @@
 package com.android.transport;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Environment;
@@ -14,7 +15,9 @@ import android.widget.ToggleButton;
 
 import com.android.annotation.ContentView;
 import com.android.annotation.ViewId;
+import com.android.db.DbHelper;
 import com.android.module.Location;
+import com.android.module.Order;
 import com.android.service.GeoLocationService;
 import com.android.util.DialogUtils;
 import com.android.util.GeoLocationUtil;
@@ -26,6 +29,8 @@ import com.baidu.navisdk.BaiduNaviManager.OnStartNavigationListener;
 import com.baidu.navisdk.comapi.routeplan.RoutePlanParams.NE_RoutePlan_Mode;
 import com.example.transportgas.R;
 
+import java.util.List;
+
 /*
  *  配送导航
  *  1.点击“选择订单”，从抢到的多个订单中选择一个，选中之后，自动调用经纬度，
@@ -36,6 +41,8 @@ import com.example.transportgas.R;
 
 @ContentView(R.layout.transport_navigation)
 public class TransportNavigation extends IActivity implements OnClickListener {
+    @ViewId(R.id.btn_orderselect)
+    private Button btnOrderselect;
     @ViewId(R.id.start_navigation)
     private Button btnNavigation;
     @ViewId(R.id.GPS_state)
@@ -69,6 +76,7 @@ public class TransportNavigation extends IActivity implements OnClickListener {
         });
         initBaduEngine(false);
         btnNavigation.setOnClickListener(this);
+        btnOrderselect.setOnClickListener(this);
     }
 
     private void initBaduEngine(boolean jump2Nav) {
@@ -171,7 +179,22 @@ public class TransportNavigation extends IActivity implements OnClickListener {
                     }
                 });
     }
+    private void showOrderList() {
+        List<Order> orderList = DbHelper.getInstance(this).queryOrders();
+        String [] items = new String[orderList.size()];
+        for (int i = 0 ;i< items.length ;i++) {
+            items[i] = orderList.get(i).getOpenId();
+        }
+        AlertDialog.Builder builder = new AlertDialog.Builder(this,R.style.AlertDialogTheme);
+        builder.setTitle("选择订单");
+        builder.setItems(items, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
 
+            }
+        });
+        builder.show();
+    }
     @Override
     public void onClick(View v) {
         if (v == btnNavigation) {
@@ -179,6 +202,10 @@ public class TransportNavigation extends IActivity implements OnClickListener {
                 initBaduEngine(true);
             else
                 launchNavigator();
+        }else if(v == btnOrderselect){
+            showOrderList();
         }
     }
+
+
 }

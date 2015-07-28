@@ -22,6 +22,7 @@
     <!-- From: file:/D:/Android/AsWorkspace/TransportGas/app/src/main/res/values/colors.xml -->
     <eat-comment/>
     <color name="appBackground">#84df2a</color>
+    <color name="appTitleBackground">#ffb60f</color>
     <!-- From: file:/D:/Android/AsWorkspace/TransportGas/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/res/values/values.xml -->
     <eat-comment/>
     <color name="background_floating_material_dark">#ff424242</color>
@@ -229,9 +230,9 @@
     <!-- From: file:/D:/Android/AsWorkspace/TransportGas/app/src/main/res/values/styles.xml -->
     <eat-comment/>
     <style name="AlertDialogTheme" parent="Theme.AppCompat.Light.Dialog">
-        <!--<item name="colorPrimary">@color/appBackground</item>-->
-        <!--<item name="colorPrimaryDark">@color/appBackground</item>-->
-        <!--<item name="colorAccent">@color/appBackground</item>-->
+        <item name="colorPrimary">@color/appBackground</item>
+        <item name="colorPrimaryDark">@color/appBackground</item>
+        <item name="colorAccent">@color/appTitleBackground</item>
     </style>
     <!-- From: file:/D:/Android/AsWorkspace/TransportGas/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/res/values/values.xml -->
     <eat-comment/>
@@ -248,13 +249,13 @@
     <style name="AppBaseTheme" parent="Theme.AppCompat.Light.NoActionBar"/>
     <style name="AppTheme" parent="AppBaseTheme">
 
-         <!--<item name="colorPrimary">@color/appBackground</item>-->
-         <!--<item name="colorPrimaryDark">@color/appBackground</item>-->
+        <!--<item name="colorPrimary">@color/appBackground</item>-->
+        <!--<item name="colorPrimaryDark">@color/appBackground</item>-->
         <item name="colorPrimary">#0288D1</item>
         <item name="colorPrimaryDark">#0277BD</item>
-         <item name="android:fitsSystemWindows">true</item>
-         <item name="windowActionBar">false</item>
-         <item name="windowNoTitle">true</item>
+        <item name="android:fitsSystemWindows">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
         <item name="popupMenuStyle">@style/popupMenuStyle</item>
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
         <item name="android:windowNoTitle">true</item>
@@ -1185,7 +1186,7 @@
         <item name="android:textSize">15dp</item>
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">25dp</item>
-        <item name="android:gravity"> center </item>
+        <item name="android:gravity">center</item>
     </style>
     <!-- From: file:/D:/Android/AsWorkspace/TransportGas/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/res/values/values.xml -->
     <eat-comment/>
@@ -1517,6 +1518,5 @@
     <style name="Widget.AppCompat.Toolbar.Button.Navigation" parent="RtlOverlay.Widget.AppCompat.Toolbar.Button.Navigation"/>
     <!-- From: file:/D:/Android/AsWorkspace/TransportGas/app/src/main/res/values/styles.xml -->
     <eat-comment/>
-    <style name="popupMenuStyle" parent="Base.Widget.AppCompat.PopupMenu.Overflow">
-    </style>
+    <style name="popupMenuStyle" parent="Base.Widget.AppCompat.PopupMenu.Overflow"/>
 </resources>

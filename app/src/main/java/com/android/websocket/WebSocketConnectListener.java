@@ -2,6 +2,8 @@ package com.android.websocket;
 
 import android.content.Context;
 
+import com.android.db.DbHelper;
+import com.android.module.Order;
 import com.android.util.LogUtils;
 
 import de.tavendo.autobahn.WebSocketConnectionHandler;
@@ -27,11 +29,17 @@ public class WebSocketConnectListener extends WebSocketConnectionHandler {
     public void onClose(int code, String reason) {
         super.onClose(code, reason);
         LogUtils.d("%s", "WebSocketConnectListener lost");
+        Order order = new Order();
+        order.setOpenId(Math.random()+"");
+        DbHelper.getInstance(context).saveOrderInfo(order);
     }
 
     @Override
     public void onTextMessage(String payload) {
         super.onTextMessage(payload);
+        Order order = new Order();
+        order.setOpenId(Math.random()+"");
+        DbHelper.getInstance(context).saveOrderInfo(order);
     }
 
 }

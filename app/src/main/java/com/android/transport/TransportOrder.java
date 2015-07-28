@@ -27,6 +27,7 @@ import com.android.module.Order;
 import com.android.util.ConfigManager;
 import com.android.util.DialogUtils;
 import com.android.util.GeoLocationUtil;
+import com.android.util.LogUtils;
 import com.android.websocket.WebSocketManager;
 import com.example.transportgas.R;
 
@@ -71,8 +72,9 @@ public class TransportOrder extends IActivity implements OnClickListener {
         list = new ArrayList<Integer>();
         adapter = new TransportOrderAdapter(this);
 //        List<Order> dbInfomations = DbHelper.getInstance(this).queryInfomations();
-//        if (dbInfomations != null)
-//            mInfomationList.addAll(dbInfomations);
+        List<Order> dbOrders = DbHelper.getInstance(this).queryOrders();
+        if (dbOrders != null)
+            mInfomationList.addAll(dbOrders);
         adapter.setData(mInfomationList);
         mListView.setAdapter(adapter);
         mDistance.setText(String.format("距离您%d公里内", ConfigManager.getInstance(this).getListenRange(3)));
