@@ -14,6 +14,7 @@ import android.widget.ToggleButton;
 
 import com.android.annotation.ContentView;
 import com.android.annotation.ViewId;
+import com.android.module.Location;
 import com.android.service.GeoLocationService;
 import com.android.util.DialogUtils;
 import com.android.util.GeoLocationUtil;
@@ -67,7 +68,6 @@ public class TransportNavigation extends IActivity implements OnClickListener {
             }
         });
         initBaduEngine(false);
-        startService(new Intent(this, GeoLocationService.class));
         btnNavigation.setOnClickListener(this);
     }
 
@@ -94,8 +94,8 @@ public class TransportNavigation extends IActivity implements OnClickListener {
             }
             if (!gpsDialog.isShowing())
                 gpsDialog.show();
-        }else{
-            if(gpsDialog != null)
+        } else {
+            if (gpsDialog != null)
                 gpsDialog.dismiss();
         }
     }
@@ -107,17 +107,14 @@ public class TransportNavigation extends IActivity implements OnClickListener {
         gpsDialogTips(isOpen);
     }
 
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        stopService(new Intent(this, GeoLocationService.class));
-    }
 
-    private class BaiduNaviEngineInitListener implements  NaviEngineInitListener{
+    private class BaiduNaviEngineInitListener implements NaviEngineInitListener {
         boolean jump2nav;
-        public BaiduNaviEngineInitListener(boolean jump2nav){
+
+        public BaiduNaviEngineInitListener(boolean jump2nav) {
             this.jump2nav = jump2nav;
         }
+
         public void engineInitSuccess() {
             mIsEngineInitSuccess = true;
             if (jump2nav)
@@ -130,6 +127,7 @@ public class TransportNavigation extends IActivity implements OnClickListener {
         public void engineInitFail() {
         }
     }
+
     private String getSdcardDir() {
         if (Environment.getExternalStorageState().equalsIgnoreCase(Environment.MEDIA_MOUNTED)) {
             return Environment.getExternalStorageDirectory().toString();
@@ -138,12 +136,13 @@ public class TransportNavigation extends IActivity implements OnClickListener {
     }
 
     @Override
-    public void onLocationChange(double longitude, double latitude) {
-        super.onLocationChange(longitude, latitude);
+    public void onLocationChange(Location location) {
+        super.onLocationChange(location);
+        this.longitude = location.getLongitude();
+        this.latitude = location.getLatitude();
         tvLongitude.setText("经度:" + longitude);
         tvLatitude.setText("纬度:" + latitude);
-        this.longitude = longitude;
-        this.latitude = latitude;
+
     }
 
     /**

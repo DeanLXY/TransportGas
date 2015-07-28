@@ -4,6 +4,7 @@ import java.lang.ref.SoftReference;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 
+import com.android.module.Location;
 import com.android.module.Order;
 import com.android.transport.IActivity;
 
@@ -25,10 +26,10 @@ public class AppUtil {
 		}
 	}
 
-	public static void onLocationChange(double longitude, double latitude) {
+	public static void onLocationChange(Location location) {
 		for (SoftReference<IActivity> sr : taskList) {
 			if (sr.get() != null) {
-				sr.get().onLocationChange(longitude, latitude);
+				sr.get().onLocationChange(location);
 			}
 		}
 	}

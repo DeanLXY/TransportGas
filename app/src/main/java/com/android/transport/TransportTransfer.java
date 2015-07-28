@@ -2,10 +2,13 @@ package com.android.transport;
 
 
 import com.android.annotation.ContentView;
+import com.android.annotation.ViewId;
+import com.android.module.Location;
 import com.example.transportgas.R;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.widget.TextView;
 
 /*
  * 配送交接
@@ -19,11 +22,17 @@ import android.os.Bundle;
  * */
 @ContentView(R.layout.transport_transfer)
 public class TransportTransfer extends IActivity {
-	
+	@ViewId(R.id.tv_location)
+	private TextView tvLocation;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
 	}
 
+	@Override
+	public void onLocationChange(Location location) {
+		super.onLocationChange(location);
+		tvLocation.setText(location.getAddrStr());
+	}
 }

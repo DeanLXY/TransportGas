@@ -11,6 +11,7 @@ import android.widget.Button;
 
 import com.android.annotation.ContentView;
 import com.android.annotation.ViewId;
+import com.android.service.GeoLocationService;
 import com.example.transportgas.R;
 
 @ContentView(R.layout.transport_main)
@@ -47,6 +48,13 @@ public class TransportMain extends IActivity implements OnClickListener {
         mService.setOnClickListener(this);
         mAnalysis.setOnClickListener(this);
         mSetting.setOnClickListener(this);
+        startService(new Intent(this, GeoLocationService.class));
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        stopService(new Intent(this, GeoLocationService.class));
     }
 
     @Override

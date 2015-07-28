@@ -5,27 +5,96 @@
     android:background="@color/appBackground"
     android:orientation="vertical">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginBottom="100dp"
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
         android:layout_marginTop="30dp"
-        android:background="@drawable/abc_popup_background_mtrl_mult"
-        android:orientation="vertical">
+        android:background="@drawable/abc_popup_background_mtrl_mult">
 
-        <TextView
-            android:id="@+id/distance"
+        <LinearLayout
+            android:id="@+id/ll_title"
             android:layout_width="match_parent"
-            android:layout_height="80dp"
-            android:layout_gravity="center"
-            android:background="#ffb60f"
-            android:gravity="center"
-            android:text="确认支付"
-            android:textColor="#ffffff"
-            android:textSize="35dp" />
-    </LinearLayout>
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
+            <TextView
+                android:id="@+id/distance"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_gravity="center"
+                android:background="#ffb60f"
+                android:gravity="center"
+                android:text="确认支付"
+                android:textColor="#ffffff"
+                android:textSize="35dp" />
+        </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ll_title"
+            android:layout_marginTop="50dp"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btn_receivemoney"
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+                    android:layout_centerInParent="true"
+                    android:layout_gravity="center"
+                    android:background="@drawable/circle_backgtound_big"
+                    android:gravity="center"
+                    android:text="收款"
+                    android:textColor="#ffffff"
+                    android:textSize="20dp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btn_order"
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+                    android:layout_centerInParent="true"
+                    android:layout_gravity="center"
+                    android:background="@drawable/circle_backgtound_big"
+                    android:gravity="center"
+                    android:text="订单"
+                    android:textColor="#ffffff"
+                    android:textSize="20dp" />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            android:background="#f7f4ef">
+
+            <Button
+                android:id="@+id/back"
+                android:layout_width="100dp"
+                android:layout_height="40dp"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center"
+                android:background="@drawable/back_button_background"
+                android:gravity="center"
+                android:text="返回"
+                android:textColor="#ffc90b"
+                android:textSize="20dp" />
+        </RelativeLayout>
+    </RelativeLayout>
 </FrameLayout>

@@ -5,7 +5,7 @@
     android:background="#84df2a"
     android:orientation="vertical">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginBottom="100dp"
@@ -16,6 +16,7 @@
         android:orientation="vertical">
 
         <TextView
+            android:id="@+id/tv_title"
             android:layout_width="match_parent"
             android:layout_height="80dp"
             android:layout_gravity="center"
@@ -28,6 +29,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_below="@id/tv_title"
             android:layout_marginTop="30dp">
 
             <RelativeLayout
@@ -69,5 +71,23 @@
             </RelativeLayout>
         </LinearLayout>
 
-    </LinearLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            android:background="#f7f4ef">
+
+            <Button
+                android:id="@+id/back"
+                android:layout_width="100dp"
+                android:layout_height="40dp"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center"
+                android:background="@drawable/back_button_background"
+                android:gravity="center"
+                android:text="返回"
+                android:textColor="#ffc90b"
+                android:textSize="20dp" />
+        </RelativeLayout>
+    </RelativeLayout>
 </FrameLayout>

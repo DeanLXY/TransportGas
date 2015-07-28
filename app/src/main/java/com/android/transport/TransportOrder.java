@@ -70,9 +70,9 @@ public class TransportOrder extends IActivity implements OnClickListener {
         mRefresh.setOnClickListener(this);
         list = new ArrayList<Integer>();
         adapter = new TransportOrderAdapter(this);
-        List<Order> dbInfomations = DbHelper.getInstance(this).queryInfomations();
-        if (dbInfomations != null)
-            mInfomationList.addAll(dbInfomations);
+//        List<Order> dbInfomations = DbHelper.getInstance(this).queryInfomations();
+//        if (dbInfomations != null)
+//            mInfomationList.addAll(dbInfomations);
         adapter.setData(mInfomationList);
         mListView.setAdapter(adapter);
         mDistance.setText(String.format("距离您%d公里内", ConfigManager.getInstance(this).getListenRange(3)));

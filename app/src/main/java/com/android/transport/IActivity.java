@@ -2,6 +2,7 @@ package com.android.transport;
 
 import com.android.annotation.ContentView;
 import com.android.annotation.util.ViewFinderUtils;
+import com.android.module.Location;
 import com.android.module.Order;
 import com.android.util.AppUtil;
 
@@ -39,7 +40,7 @@ public abstract class IActivity extends AppCompatActivity {
 		return LAYOUTID_UNAVAILABLE;
 	}
 
-	public void onLocationChange(double longitude, double latitude) {
+	public void onLocationChange(Location location) {
 	}
 
 	public void onWebSocketDataChange(Order info) {

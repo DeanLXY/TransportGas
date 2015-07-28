@@ -4,6 +4,7 @@ import android.app.Service;
 import android.content.Intent;
 import android.os.IBinder;
 
+import com.android.module.Location;
 import com.android.util.AppUtil;
 import com.baidu.navi.location.BDLocation;
 import com.baidu.navi.location.BDLocationListener;
@@ -13,6 +14,7 @@ import com.baidu.navi.location.LocationClientOption;
 public class GeoLocationService extends Service {
 
 	private LocationClient mLocationClient;
+	private Location mLocation;
 
 	@Override
 	public IBinder onBind(Intent intent) {
@@ -22,6 +24,7 @@ public class GeoLocationService extends Service {
 	@Override
 	public void onCreate() {
 		super.onCreate();
+		mLocation = new Location();
 		mLocationClient = new LocationClient(this.getApplicationContext());
 		MyLocationListener mMyLocationListener = new MyLocationListener();
 		mLocationClient.registerLocationListener(mMyLocationListener);
@@ -52,7 +55,11 @@ public class GeoLocationService extends Service {
 
 		@Override
 		public void onReceiveLocation(BDLocation location) {
-			AppUtil.onLocationChange(location.getLongitude(), location.getLatitude());
+			mLocation.setLocType(location.getLocType());
+			mLocation.setLongitude(location.getLongitude());
+			mLocation.setLatitude(location.getLatitude());
+			mLocation.setAddrStr(location.getAddrStr());
+			AppUtil.onLocationChange(mLocation);
 		}
 
 		@Override
