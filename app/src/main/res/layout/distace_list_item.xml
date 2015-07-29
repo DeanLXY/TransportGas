@@ -1,35 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="horizontal" >
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
 
-    <ImageView
-        android:id="@+id/img"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_marginStart="5dp"
-        android:src="@drawable/ic_launcher" />
+        android:minHeight="82dp"
+        android:paddingEnd="10dp"
+        android:orientation="horizontal"
+        android:paddingBottom="16dp"
+        android:paddingStart="10dp"
+        android:paddingTop="16dp">
 
-    <CheckBox
-        android:id="@+id/cb"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_marginEnd="5dp"
-        android:clickable="false"
-        android:focusable="false" />
+        <ImageView
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src="@drawable/ic_launcher" />
 
-    <TextView
-        android:id="@+id/order_content"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical"
-        android:layout_marginRight="20dp"
-        android:layout_toLeftOf="@id/cb"
-        android:layout_toRightOf="@id/img"
-        android:gravity="center_vertical" />
+        <com.android.widget.JustifyTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:lineSpacingExtra="8dp"
+            android:text="APP实时接收用户提交的微信订单，提醒商家接单(以秒计算抢单时间):"
+            android:textColor="#000000"
+            android:textSize="16dp" />
+    </LinearLayout>
 
 
-</RelativeLayout>
+</FrameLayout>

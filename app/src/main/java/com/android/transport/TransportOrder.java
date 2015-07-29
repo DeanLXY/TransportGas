@@ -57,7 +57,6 @@ public class TransportOrder extends IActivity implements OnClickListener {
     private ListView mListView;
     private TransportOrderAdapter adapter;
 
-    private ArrayList<Integer> list; // listView的集合数据
     private List<Order> mInfomationList = new ArrayList<Order>();
     private AlertDialog gpsDialog;
 
@@ -69,7 +68,6 @@ public class TransportOrder extends IActivity implements OnClickListener {
         mVoiceBroadCast.setOnClickListener(this);
         mGrabList.setOnClickListener(this);
         mRefresh.setOnClickListener(this);
-        list = new ArrayList<Integer>();
         adapter = new TransportOrderAdapter(this);
 //        List<Order> dbInfomations = DbHelper.getInstance(this).queryInfomations();
         List<Order> dbOrders = DbHelper.getInstance(this).queryOrders();
