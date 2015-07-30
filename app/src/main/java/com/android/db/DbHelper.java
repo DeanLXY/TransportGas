@@ -24,7 +24,6 @@ public class DbHelper {
 
 
     public static DbHelper getInstance(Context context) {
-        LogUtils.e("context = %s", "" + context);
         if (mHelper == null) {
             synchronized (DbHelper.class) {
                 if (mHelper == null)
