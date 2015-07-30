@@ -38,12 +38,9 @@
             android:layout_height="match_parent"
             android:layout_below="@id/ll_title">
 
-            <ListView
-                android:id="@+id/listView"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"></ListView>
 
             <RelativeLayout
+                android:id="@+id/rl_options"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_alignParentBottom="true"
@@ -61,6 +58,12 @@
                     android:textColor="#ffc90b"
                     android:textSize="20dp" />
             </RelativeLayout>
+
+            <ListView
+                android:id="@+id/listView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@id/rl_options"></ListView>
         </RelativeLayout>
     </RelativeLayout>
 
@@ -80,14 +83,15 @@
 
             <ToggleButton
                 android:id="@+id/open_gps"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
                 android:layout_centerInParent="true"
                 android:layout_gravity="center"
                 android:background="@drawable/circle_backgtound"
+                android:gravity="center"
                 android:textColor="#ffc90b"
-                android:textOff="关闭\nGPS"
-                android:textOn="打开\nGPS"
+                android:textOff="打开\nGPS"
+                android:textOn="关闭\nGPS"
                 android:textSize="14dp" />
         </RelativeLayout>
 
@@ -99,8 +103,8 @@
 
             <Button
                 android:id="@+id/grab_list"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
+                android:layout_width="72dp"
+                android:layout_height="72dp"
                 android:layout_centerInParent="true"
                 android:layout_gravity="center"
                 android:background="@drawable/circle_backgtound_big"
@@ -118,11 +122,12 @@
 
             <ToggleButton
                 android:id="@+id/voice_broadcast"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
                 android:layout_centerInParent="true"
                 android:layout_gravity="center"
                 android:background="@drawable/circle_backgtound"
+                android:gravity="center"
                 android:textColor="#ffc90b"
                 android:textOff="语音\n静音"
                 android:textOn="语音\n播报"

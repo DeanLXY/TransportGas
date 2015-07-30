@@ -130,6 +130,7 @@ public class TransportNavigation extends IActivity implements OnClickListener {
         }
 
         public void engineInitStart() {
+
         }
 
         public void engineInitFail() {
@@ -193,6 +194,7 @@ public class TransportNavigation extends IActivity implements OnClickListener {
 
             }
         });
+        builder.setNegativeButton("取消",null);
         builder.show();
     }
     @Override

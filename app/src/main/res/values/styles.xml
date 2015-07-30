@@ -5,17 +5,16 @@
     <!-- Application theme. -->
     <style name="AppTheme" parent="AppBaseTheme">
 
-        <!--<item name="colorPrimary">@color/appBackground</item>-->
-        <!--<item name="colorPrimaryDark">@color/appBackground</item>-->
-        <item name="colorPrimary">#0288D1</item>
-        <item name="colorPrimaryDark">#0277BD</item>
+        <item name="colorPrimary">@color/appBackground</item>
+        <item name="colorPrimaryDark">@color/appBackground</item>
         <item name="android:fitsSystemWindows">true</item>
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
         <item name="popupMenuStyle">@style/popupMenuStyle</item>
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
         <item name="android:windowNoTitle">true</item>
-
+        <item name="android:activatedBackgroundIndicator">@drawable/activated_background</item>
+        <item name="selectableItemBackground">@drawable/selectable_background</item>
         <!-- <item name="android:windowAnimationStyle">@style/AnimationActivity</item> -->
     </style>
 
@@ -40,6 +39,10 @@
         <item name="colorPrimaryDark">@color/appBackground</item>
         <item name="colorAccent">@color/appTitleBackground</item>
     </style>
-
+    <style name="MainTheme" parent="AppTheme">
+        <item name="android:textColorPrimary">@android:color/black</item>
+        <item name="android:textColorSecondary">@android:color/white</item>
+        <item name="colorAccent">@color/appBackground</item>
+    </style>
     <style name="popupMenuStyle" parent="Base.Widget.AppCompat.PopupMenu.Overflow"></style>
 </resources>

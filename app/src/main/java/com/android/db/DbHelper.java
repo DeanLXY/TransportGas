@@ -24,7 +24,7 @@ public class DbHelper {
 
 
     public static DbHelper getInstance(Context context) {
-        LogUtils.e("context = %s",""+context);
+        LogUtils.e("context = %s", "" + context);
         if (mHelper == null) {
             synchronized (DbHelper.class) {
                 if (mHelper == null)
@@ -49,10 +49,11 @@ public class DbHelper {
                 result = insert(DbOpenHelper.TABLEORDER, null, order.toContentValues());
             }
         } catch (Exception e) {
-            LogUtils.e("%s",e.getMessage());
+            LogUtils.e("%s", e.getMessage());
         }
         return result;
     }
+
     public List<Order> queryOrders() {
         Cursor query = query(DbOpenHelper.TABLEORDER, null, null, null, null, null, null);
         List<Order> dbOrders = CursorUtils.getBeanListFromCursor(Order.class, query);
@@ -145,12 +146,7 @@ public class DbHelper {
 
     public synchronized SQLiteDatabase getDatabase() {
         if (database == null || !database.isOpen()) {
-            LogUtils.e("%s","before database = "+database);
-            try {
-                database = helper.getWritableDatabase();
-            }catch (Exception e){
-                LogUtils.e("%s","after database = "+database+">>>e"+e.getMessage());
-            }
+            database = helper.getWritableDatabase();
         }
         return database;
     }
@@ -165,7 +161,6 @@ public class DbHelper {
         helper = null;
         mHelper = null;
     }
-
 
 
     private class DbOpenHelper extends SQLiteOpenHelper {

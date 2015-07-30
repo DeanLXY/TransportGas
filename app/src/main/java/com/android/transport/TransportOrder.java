@@ -12,6 +12,7 @@ import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -42,7 +43,7 @@ import com.example.transportgas.R;
  *
  */
 @ContentView(R.layout.transport_orders)
-public class TransportOrder extends IActivity implements OnClickListener {
+public class TransportOrder extends IActivity implements OnClickListener, AdapterView.OnItemClickListener {
     @ViewId(R.id.tv_distance)
     private TextView mDistance;
     @ViewId(R.id.open_gps)
@@ -75,6 +76,9 @@ public class TransportOrder extends IActivity implements OnClickListener {
             mInfomationList.addAll(dbOrders);
         adapter.setData(mInfomationList);
         mListView.setAdapter(adapter);
+        mListView.setOnItemClickListener(this);
+        mListView.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
+        mListView.setItemChecked(0,true);
         mDistance.setText(String.format("距离您%d公里内", ConfigManager.getInstance(this).getListenRange(3)));
     }
 
@@ -157,6 +161,11 @@ public class TransportOrder extends IActivity implements OnClickListener {
         Uri alert = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
         Ringtone r = RingtoneManager.getRingtone(getApplicationContext(), alert);
         r.play();
+    }
+
+    @Override
+    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+        mListView.setItemChecked(i, true);
     }
 
     abstract class OrderTask<Params> extends AsyncTask<Params, Void, List<Order>> {
