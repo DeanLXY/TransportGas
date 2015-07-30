@@ -5,9 +5,13 @@ import com.android.annotation.ContentView;
 import com.android.annotation.ViewId;
 import com.android.module.Location;
 import com.example.transportgas.R;
+import com.google.zxing.CaptureActivity;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 /*
@@ -21,18 +25,31 @@ import android.widget.TextView;
  * 
  * */
 @ContentView(R.layout.transport_transfer)
-public class TransportTransfer extends IActivity {
-	@ViewId(R.id.tv_location)
-	private TextView tvLocation;
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
+public class TransportTransfer extends IActivity implements View.OnClickListener {
+    @ViewId(R.id.tv_location)
+    private TextView tvLocation;
+    @ViewId(R.id.btn_turnBottle)
+    private Button btnTurnBottle;
 
-	}
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        btnTurnBottle.setOnClickListener(this);
 
-	@Override
-	public void onLocationChange(Location location) {
-		super.onLocationChange(location);
-		tvLocation.setText(location.getAddrStr());
-	}
+    }
+
+    @Override
+    public void onLocationChange(Location location) {
+        super.onLocationChange(location);
+        tvLocation.setText(location.getAddrStr());
+    }
+
+    @Override
+    public void onClick(View view) {
+        if (view == btnTurnBottle) {
+            Intent captureIntent = new Intent(this, CaptureActivity.class);
+            startActivity(captureIntent
+            );
+        }
+    }
 }

@@ -3,11 +3,17 @@
 
     <color name="appBackground">#84df2a</color>
     <color name="appTitleBackground">#ffb60f</color>
-    <color name="grey" >#ffbebebe</color>
+    <color name="grey">#ffbebebe</color>
     <color name="dark_grey">#FF080808</color>
     <color name="light_grey">#ffbebebe</color>
     <color name="light_grey_1">#FFEEEEEE</color>
 
     <color name="textColorPrimary">@color/dark_grey</color>
     <color name="textColorSecondary">#848484</color>
+
+    <color name="viewfinder_frame">#ff88ae00</color>
+    <color name="viewfinder_laser">#ffff0000</color>
+    <color name="viewfinder_mask">#60000000</color>
+    <color name="possible_result_points">#c0ffff00</color>
+    <color name="result_view">#b0000000</color>
 </resources>

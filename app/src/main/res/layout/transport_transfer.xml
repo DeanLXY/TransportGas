@@ -43,7 +43,7 @@
                     android:orientation="horizontal">
 
                     <Button
-                        android:id="@+id/turn_bottle"
+                        android:id="@+id/btn_turnBottle"
                         android:layout_width="90dp"
                         android:layout_height="90dp"
                         android:layout_centerInParent="true"
