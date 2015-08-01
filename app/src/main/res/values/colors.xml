@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <color name="white">#ffffff</color>
+    <color name="transparent">#00000000</color>
     <color name="appBackground">#84df2a</color>
     <color name="appTitleBackground">#ffb60f</color>
     <color name="grey">#ffbebebe</color>

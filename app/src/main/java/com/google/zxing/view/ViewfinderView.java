@@ -16,10 +16,6 @@
 
 package com.google.zxing.view;
 
-import com.example.transportgas.R;
-import com.google.zxing.ResultPoint;
-import com.google.zxing.camera.CameraManager;
-
 import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
@@ -28,6 +24,11 @@ import android.graphics.Paint;
 import android.graphics.Rect;
 import android.util.AttributeSet;
 import android.view.View;
+
+import com.android.util.DensityUtils;
+import com.example.transportgas.R;
+import com.google.zxing.ResultPoint;
+import com.google.zxing.camera.CameraManager;
 
 import java.util.Collection;
 import java.util.HashSet;
@@ -47,7 +48,9 @@ public final class ViewfinderView extends View {
     private static final int OPAQUE = 0xFF;
 
     private final Paint paint;
+    private final Paint textPaint;
     private Bitmap resultBitmap;
+    private int textHeight;
     private final int maskColor;
     private final int resultColor;
     private final int frameColor;
@@ -64,12 +67,19 @@ public final class ViewfinderView extends View {
         // Initialize these once for performance rather than calling them every
         // time in onDraw().
         paint = new Paint();
+        textPaint = new Paint();
+        textPaint.setFlags(Paint.ANTI_ALIAS_FLAG);
+        textPaint.setTextSize(DensityUtils.sp2px(getContext(),18.0f));
+        textPaint.setUnderlineText(false);
+        Paint.FontMetrics fm = textPaint.getFontMetrics();
+        textHeight = (int) Math.ceil(fm.descent - fm.ascent);
         Resources resources = getResources();
+        textPaint.setColor(resources.getColor(R.color.white));
         maskColor = resources.getColor(R.color.viewfinder_mask);
         resultColor = resources.getColor(R.color.result_view);
         frameColor = resources.getColor(R.color.appTitleBackground);
-        laserColor = resources.getColor(R.color.appBackground);
-        resultPointColor = resources.getColor(R.color.possible_result_points);
+        laserColor = resources.getColor(R.color.transparent);
+        resultPointColor = resources.getColor(R.color.transparent);
         scannerAlpha = 0;
         possibleResultPoints = new HashSet<ResultPoint>(5);
     }
@@ -84,7 +94,7 @@ public final class ViewfinderView extends View {
         int height = canvas.getHeight();
 
         // Draw the exterior (i.e. outside the framing rect) darkened
-        paint.setColor(resultBitmap != null ? resultColor : maskColor);
+
         canvas.drawRect(0, 0, width, frame.top, paint);
         canvas.drawRect(0, frame.top, frame.left, frame.bottom + 1, paint);
         canvas.drawRect(frame.right + 1, frame.top, width, frame.bottom + 1,
@@ -153,13 +163,20 @@ public final class ViewfinderView extends View {
                             + point.getY(), 3.0f, paint);
                 }
             }
-
+            drawText(canvas, frame);
             // Request another update at the animation interval, but only
             // repaint the laser line,
             // not the entire viewfinder mask.
             postInvalidateDelayed(ANIMATION_DELAY, frame.left, frame.top,
                     frame.right, frame.bottom);
         }
+    }
+
+    private void drawText(Canvas canvas, Rect frame) {
+        String textTips = "将二维码/条形码放置框内，即开始扫描";
+        float textWidth = textPaint.measureText(textTips, 0, textTips.length());
+        float textStart = frame.width() / 2 +frame.left- textWidth / 2;
+        canvas.drawText(textTips, textStart, frame.bottom + textHeight * 2, textPaint);
     }
 
     public void drawViewfinder() {

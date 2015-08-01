@@ -24,11 +24,13 @@ import com.google.zxing.camera.CameraManager;
 import com.google.zxing.view.ViewfinderResultPointCallback;
 
 import android.app.Activity;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.support.v7.app.AlertDialog;
 import android.util.Log;
 
 import java.util.Vector;
@@ -93,7 +95,17 @@ public final class CaptureActivityHandler extends Handler {
 //                intent.putExtra("code", str_result);
 //                activity.startActivity(intent);
 //                activity.finish();
-
+                AlertDialog.Builder builder = new AlertDialog.Builder(activity,R.style.AlertDialogTheme);
+                builder.setTitle("识别结果");
+                builder.setMessage(str_result);
+                builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        dialogInterface.dismiss();
+                        activity.finish();
+                    }
+                });
+                builder.show();
                 break;
             case R.id.decode_failed:
                 // We're decoding as fast as possible, so when one decode fails, start another.
