@@ -38,6 +38,11 @@
         <item name="colorPrimary">@color/appBackground</item>
         <item name="colorPrimaryDark">@color/appBackground</item>
         <item name="colorAccent">@color/appTitleBackground</item>
+        <!--<item name="android:windowAnimationStyle">@style/Animation.AppCompat.Dialog.Anim</item>-->
+    </style>
+    <style name="Animation.AppCompat.Dialog.Anim">
+        <item name="android:windowEnterAnimation">@anim/abc_slide_in_bottom</item>
+        <item name="android:windowExitAnimation">@anim/abc_slide_out_bottom</item>
     </style>
     <style name="MainTheme" parent="AppTheme">
         <item name="android:textColorPrimary">@android:color/black</item>

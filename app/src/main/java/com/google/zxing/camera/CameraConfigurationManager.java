@@ -50,6 +50,7 @@ final class CameraConfigurationManager {
    */
   void initFromCameraParameters(Camera camera) {
     Camera.Parameters parameters = camera.getParameters();
+    parameters.setFlashMode(Camera.Parameters.FLASH_MODE_ON);
     previewFormat = parameters.getPreviewFormat();
     previewFormatString = parameters.get("preview-format");
     Log.d(TAG, "Default preview format: " + previewFormat + '/' + previewFormatString);

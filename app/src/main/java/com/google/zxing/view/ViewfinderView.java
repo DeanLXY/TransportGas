@@ -22,6 +22,7 @@ import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Rect;
+import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
 import android.view.View;
 
@@ -44,7 +45,7 @@ public final class ViewfinderView extends View {
 
     private static final int[] SCANNER_ALPHA = {0, 64, 128, 192, 255, 192,
             128, 64};
-    private static final long ANIMATION_DELAY = 100L;
+    private static final long ANIMATION_DELAY = 10L;
     private static final int OPAQUE = 0xFF;
 
     private final Paint paint;
@@ -57,6 +58,8 @@ public final class ViewfinderView extends View {
     private final int laserColor;
     private final int resultPointColor;
     private int scannerAlpha;
+    private float scannerOffset;
+    private Drawable laserLine;
     private Collection<ResultPoint> possibleResultPoints;
     private Collection<ResultPoint> lastPossibleResultPoints;
 
@@ -80,6 +83,7 @@ public final class ViewfinderView extends View {
         frameColor = resources.getColor(R.color.appTitleBackground);
         laserColor = resources.getColor(R.color.transparent);
         resultPointColor = resources.getColor(R.color.transparent);
+        laserLine = resources.getDrawable(R.drawable.barcode_laser_line);
         scannerAlpha = 0;
         possibleResultPoints = new HashSet<ResultPoint>(5);
     }
@@ -94,7 +98,7 @@ public final class ViewfinderView extends View {
         int height = canvas.getHeight();
 
         // Draw the exterior (i.e. outside the framing rect) darkened
-
+        paint.setColor(maskColor);
         canvas.drawRect(0, 0, width, frame.top, paint);
         canvas.drawRect(0, frame.top, frame.left, frame.bottom + 1, paint);
         canvas.drawRect(frame.right + 1, frame.top, width, frame.bottom + 1,
@@ -132,15 +136,18 @@ public final class ViewfinderView extends View {
                     + (linewidht - (linewidht - 1) + frame.bottom), paint);
 
 
-            paint.setColor(laserColor);
+            paint.setColor(frameColor);
             paint.setAlpha(SCANNER_ALPHA[scannerAlpha]);
             scannerAlpha = (scannerAlpha + 1) % SCANNER_ALPHA.length;
-            int vmiddle = frame.height() / 2 + frame.top;
-            int hmiddle = frame.width() / 2 + frame.left;
-            canvas.drawRect(frame.left + 2, vmiddle - 1, frame.right - 1,
-                    vmiddle + 2, paint);
+            if (scannerOffset <=frame.height()){
+                scannerOffset +=2;
+            }else {
+                scannerOffset = 0;
+            }
 
-            canvas.drawRect(hmiddle - 1, frame.top + 2, hmiddle + 2, frame.bottom - 1, paint);
+           float vOffset= frame.top + scannerOffset;
+            laserLine.setBounds(frame.left + 2,frame.top,frame.right - 1, (int) vOffset+2);
+            laserLine.draw(canvas);
             Collection<ResultPoint> currentPossible = possibleResultPoints;
             Collection<ResultPoint> currentLast = lastPossibleResultPoints;
             if (currentPossible.isEmpty()) {

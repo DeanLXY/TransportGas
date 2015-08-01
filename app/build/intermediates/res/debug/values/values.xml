@@ -272,10 +272,19 @@
         <item name="colorPrimary">@color/appBackground</item>
         <item name="colorPrimaryDark">@color/appBackground</item>
         <item name="colorAccent">@color/appTitleBackground</item>
+        <!--<item name="android:windowAnimationStyle">@style/Animation.AppCompat.Dialog.Anim</item>-->
     </style>
     <!-- From: file:/D:/Android/AsWorkspace/TransportGas/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/res/values/values.xml -->
     <eat-comment/>
     <style name="Animation.AppCompat.Dialog" parent="Base.Animation.AppCompat.Dialog"/>
+    <!-- From: file:/D:/Android/AsWorkspace/TransportGas/app/src/main/res/values/styles.xml -->
+    <eat-comment/>
+    <style name="Animation.AppCompat.Dialog.Anim">
+        <item name="android:windowEnterAnimation">@anim/abc_slide_in_bottom</item>
+        <item name="android:windowExitAnimation">@anim/abc_slide_out_bottom</item>
+    </style>
+    <!-- From: file:/D:/Android/AsWorkspace/TransportGas/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/res/values/values.xml -->
+    <eat-comment/>
     <style name="Animation.AppCompat.DropDownUp" parent="Base.Animation.AppCompat.DropDownUp"/>
     <!-- From: file:/D:/Android/AsWorkspace/TransportGas/app/src/main/res/values/styles.xml -->
     <eat-comment/>

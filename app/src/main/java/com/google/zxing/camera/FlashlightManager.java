@@ -19,6 +19,8 @@ package com.google.zxing.camera;
 import android.os.IBinder;
 import android.util.Log;
 
+import com.android.util.LogUtils;
+
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
@@ -54,6 +56,7 @@ final class FlashlightManager {
   }
 
   private static Object getHardwareService() {
+    LogUtils.d("%s","init flashlight");
     Class<?> serviceManagerClass = maybeForName("android.os.ServiceManager");
     if (serviceManagerClass == null) {
       return null;
