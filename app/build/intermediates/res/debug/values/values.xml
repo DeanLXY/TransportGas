@@ -241,6 +241,12 @@
     <integer name="abc_max_action_buttons">2</integer>
     <integer name="cancel_button_image_alpha">127</integer>
     <integer name="status_bar_notification_info_maxnum">999</integer>
+    <!-- From: file:/D:/Android/AsWorkspace/TransportGas/app/src/main/res/values/strings.xml -->
+    <eat-comment/>
+    <string name="GPS_state_off">GPS状态关</string>
+    <string name="GPS_state_on">GPS状态开</string>
+    <!-- From: file:/D:/Android/AsWorkspace/TransportGas/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/res/values/values.xml -->
+    <eat-comment/>
     <string name="abc_action_bar_home_description">Navigate home</string>
     <string name="abc_action_bar_home_description_format">%1$s, %2$s</string>
     <string name="abc_action_bar_home_subtitle_description_format">%1$s, %2$s, %3$s</string>
@@ -260,10 +266,43 @@
     <string name="abc_toolbar_collapse_description">Collapse</string>
     <!-- From: file:/D:/Android/AsWorkspace/TransportGas/app/src/main/res/values/strings.xml -->
     <eat-comment/>
-    <string name="app_name">TransportGas</string>
+    <string name="app_name">应用</string>
+    <string name="auth">认证</string>
+    <string name="block">块号：</string>
+    <string name="blocks">块数量：</string>
+    <string name="cardType">卡类型</string>
+    <string name="clear">清除</string>
+    <string name="collect_bottle">收瓶</string>
+    <string name="connect">连接模块</string>
+    <string name="count">次数</string>
+    <string name="findcard">寻卡</string>
+    <string name="id">序号</string>
+    <string name="more_option">更多</string>
+    <string name="password">密码：</string>
+    <string name="password_a">密码A</string>
+    <string name="password_b">密码B</string>
+    <string name="readData">读数据</string>
+    <string name="safe_inform">安全\n告知</string>
+    <string name="safe_inform_title">安全告知</string>
+    <string name="scan_erweima">二维码\n扫描</string>
+    <string name="scan_text">将二维码放入框内, 即可自动扫描</string>
+    <string name="scan_tiaoma">条码\n扫描</string>
+    <string name="scan_title">请选择扫描方式</string>
+    <string name="sector">扇区：</string>
+    <string name="selectCard">选择卡片</string>
+    <string name="startArr">起始块：</string>
+    <string name="startInventory">开始扫描</string>
     <!-- From: file:/D:/Android/AsWorkspace/TransportGas/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/res/values/values.xml -->
     <eat-comment/>
     <string name="status_bar_notification_info_overflow">999+</string>
+    <!-- From: file:/D:/Android/AsWorkspace/TransportGas/app/src/main/res/values/strings.xml -->
+    <eat-comment/>
+    <string name="transfer">配 送 交 接</string>
+    <string name="turn_bottle">交瓶</string>
+    <string name="uid">UID：</string>
+    <string name="writeData">写数据</string>
+    <!-- From: file:/D:/Android/AsWorkspace/TransportGas/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/res/values/values.xml -->
+    <eat-comment/>
     <style name="AlertDialog.AppCompat" parent="Base.AlertDialog.AppCompat"/>
     <style name="AlertDialog.AppCompat.Light" parent="Base.AlertDialog.AppCompat.Light"/>
     <!-- From: file:/D:/Android/AsWorkspace/TransportGas/app/src/main/res/values/styles.xml -->
@@ -294,7 +333,7 @@
         <item name="android:activityCloseEnterAnimation">@anim/activity_close_enter</item>
         <item name="android:activityCloseExitAnimation">@anim/activity_close_exit</item>
     </style>
-    <style name="AppBaseTheme" parent="Theme.AppCompat.Light.NoActionBar"/>
+    <style name="AppBaseTheme" parent="Theme.AppCompat.Light"/>
     <style name="AppTheme" parent="AppBaseTheme">
 
         <item name="colorPrimary">@color/appBackground</item>
@@ -1240,6 +1279,9 @@
         <item name="android:textColorSecondary">@android:color/white</item>
         <item name="colorAccent">@color/appBackground</item>
     </style>
+    <style name="MyFontStyle">
+        <item name="android:textSize">20sp</item>
+    </style>
     <!-- From: file:/D:/Android/AsWorkspace/TransportGas/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/res/values/values.xml -->
     <eat-comment/>
     <style name="Platform.AppCompat" parent="android:Theme">
@@ -1477,6 +1519,15 @@
     <style name="ThemeOverlay.AppCompat.Dark" parent="Base.ThemeOverlay.AppCompat.Dark"/>
     <style name="ThemeOverlay.AppCompat.Dark.ActionBar" parent="Base.ThemeOverlay.AppCompat.Dark.ActionBar"/>
     <style name="ThemeOverlay.AppCompat.Light" parent="Base.ThemeOverlay.AppCompat.Light"/>
+    <!-- From: file:/D:/Android/AsWorkspace/TransportGas/app/src/main/res/values/styles.xml -->
+    <eat-comment/>
+    <style name="ToolbarTheme" parent="AppBaseTheme">
+        <!--<item name="android:textColorPrimary">@android:color/white</item>-->
+        <!--<item name="android:textColorSecondary">@android:color/white</item>-->
+        <!--<item name="android:textCursorDrawable">@drawable/cursor_drawable</item>-->
+    </style>
+    <!-- From: file:/D:/Android/AsWorkspace/TransportGas/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/res/values/values.xml -->
+    <eat-comment/>
     <style name="Widget.AppCompat.ActionBar" parent="Base.Widget.AppCompat.ActionBar">
     </style>
     <style name="Widget.AppCompat.ActionBar.Solid" parent="Base.Widget.AppCompat.ActionBar.Solid">

@@ -1,5 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-
-    <string name="app_name">TransportGas</string>
-
+    <string name="app_name">应用</string>
+    <string name="transfer">配 送 交 接</string>
+    <string name="turn_bottle">交瓶</string>
+    <string name="collect_bottle">收瓶</string>
+    <string name="safe_inform">安全\n告知</string>
+    <string name="GPS_state_on">GPS状态开</string>
+    <string name="GPS_state_off">GPS状态关</string>
+    <string name="scan_title">请选择扫描方式</string>
+    <string name="scan_tiaoma">条码\n扫描</string>
+    <string name="scan_erweima">二维码\n扫描</string>
+    <string name="safe_inform_title">安全告知</string>
+        <!--  <string name="app_name">HF演示程序</string> -->
+    <string name="more_option">更多</string>
+    <string name="cardType">卡类型</string>
+	<string name="connect">连接模块</string>
+	<string name="id">序号</string>
+	<string name="count">次数</string>
+	<string name="startInventory">开始扫描</string>
+	<string name="clear">清除</string>	
+	<string name="uid">UID：</string>
+	<string name="sector">扇区：</string>
+	<string name="block">块号：</string>
+	<string name="password_a">密码A</string>
+    <string name="password_b">密码B</string>
+	<string name="password">密码：</string>
+	<string name="readData">读数据</string>
+	<string name="writeData">写数据</string>
+	<string name="findcard">寻卡</string>
+	<string name="auth">认证</string>
+	<string name="startArr">起始块：</string>
+	<string name="blocks">块数量：</string>
+	<string name="selectCard">选择卡片</string>
+	<string name="scan_text">将二维码放入框内, 即可自动扫描</string>
 </resources>

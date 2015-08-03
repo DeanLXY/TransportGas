@@ -4,10 +4,10 @@ package com.android.transport;
 import com.android.annotation.ContentView;
 import com.android.annotation.ViewId;
 import com.android.module.Location;
+import com.android.nfc.ScanActivity;
 import com.example.transportgas.R;
 import com.google.zxing.CaptureActivity;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -48,8 +48,7 @@ public class TransportTransfer extends IActivity implements View.OnClickListener
     public void onClick(View view) {
         if (view == btnTurnBottle) {
             Intent captureIntent = new Intent(this, CaptureActivity.class);
-            startActivity(captureIntent
-            );
+            startActivity(captureIntent);
         }
     }
 }

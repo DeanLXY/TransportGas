@@ -15,6 +15,7 @@ import android.view.SurfaceView;
 import android.widget.TextView;
 
 import com.android.annotation.ContentView;
+import com.android.annotation.ViewId;
 import com.android.transport.IActivity;
 import com.example.transportgas.R;
 import com.google.zxing.camera.CameraManager;
@@ -28,11 +29,14 @@ import java.util.Vector;
 public class CaptureActivity extends IActivity implements Callback {
 
     private CaptureActivityHandler handler;
+    @ViewId(R.id.viewfinder_view)
     private ViewfinderView viewfinderView;
+    @ViewId(R.id.txtResult)
+    private TextView txtResult;
     private boolean hasSurface;
     private Vector<BarcodeFormat> decodeFormats;
     private String characterSet;
-    private TextView txtResult;
+
     private InactivityTimer inactivityTimer;
     private MediaPlayer mediaPlayer;
     private boolean playBeep;
@@ -46,8 +50,6 @@ public class CaptureActivity extends IActivity implements Callback {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         CameraManager.init(this);
-        viewfinderView = (ViewfinderView) findViewById(R.id.viewfinder_view);
-        txtResult = (TextView) findViewById(R.id.txtResult);
         hasSurface = false;
         inactivityTimer = new InactivityTimer(this);
     }

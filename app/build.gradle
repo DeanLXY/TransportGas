@@ -23,11 +23,13 @@ android {
 }
 
 dependencies {
-    compile 'com.android.support:support-v4:19.1.0'
     compile files('libs/android_api_1.1_forsdk.jar')
     compile files('libs/autoba.jar')
     compile files('libs/BaiduLBS_Android.jar')
     compile files('libs/galaxy_mini.jar')
     compile 'com.android.support:appcompat-v7:22.2.0'
     compile files('libs/core-3.2.0.jar')
+    compile files('libs/hf_0.jar')
+    compile files('libs/serialPort.jar')
+    compile 'com.android.support:support-v4:22.2.0'
 }

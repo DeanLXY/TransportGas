@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp" >
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/MyFontStyle"
+            android:text="@string/uid" />
+
+        <EditText
+            android:id="@+id/editTextUid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/MyFontStyle"
+            android:ems="10"
+            android:focusable="false" >
+
+        </EditText>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"  >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/MyFontStyle"
+            android:text="@string/sector" />
+
+        <EditText
+            android:id="@+id/editTextSector"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/MyFontStyle"
+            android:text="1"
+            android:ems="3" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/MyFontStyle"
+            android:text="@string/block" />
+        <EditText
+            android:id="@+id/editTextBlock"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            style="@style/MyFontStyle"
+            android:ems="3" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp" >
+        <RadioGroup 
+			    android:id="@+id/password_group"
+			android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_centerInParent="true"
+			    >
+			<RadioButton 
+			    android:id="@+id/password_a"
+			 android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/password_a"
+            android:checked="true"
+			        />
+			
+			<RadioButton 
+			    android:id="@+id/password_b"
+			 android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/password_b"
+			        />
+			</RadioGroup>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" 
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/MyFontStyle"
+            android:text="@string/password" />
+
+        <EditText
+            android:id="@+id/editTextPassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/MyFontStyle"
+            android:ems="10"
+            android:text="FFFFFFFFFFFF"
+            android:focusable="false" >
+
+        </EditText>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" 
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/readData" />
+
+        <EditText
+            android:id="@+id/editTextReadData"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:focusable="false" >
+
+        </EditText>
+    </LinearLayout>
+        <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" 
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/writeData" />
+
+        <EditText
+            android:id="@+id/editTextWriteData"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:text="00000000000000000000000000000000" >
+
+        </EditText>
+    </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp" >
+
+            <Button
+                android:id="@+id/buttonFind14443A"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/findcard" />
+
+            <Button
+                android:id="@+id/buttonAuth"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/auth" />
+        
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <Button
+                android:id="@+id/buttonRead14443"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/readData" />
+
+            <Button
+                android:id="@+id/buttonWrite14443"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/writeData" />
+        
+        </LinearLayout>
+
+</LinearLayout>

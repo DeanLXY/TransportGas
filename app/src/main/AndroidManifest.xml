@@ -32,9 +32,10 @@
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
-<!-- flashlight-->
+    <!-- flashlight-->
     <uses-permission android:name="android.permission.FLASHLIGHT" />
     <uses-permission android:name="android.permission.CAMERA" />
+
     <uses-feature android:name="android.hardware.camera" />
     <uses-feature android:name="android.hardware.camera.autofocus" />
 
@@ -95,6 +96,9 @@
         <activity
             android:name="com.google.zxing.CaptureActivity"
             android:label="@string/app_name"></activity>
+        <activity android:name="com.android.nfc.ScanActivity"
+            android:windowSoftInputMode="adjustPan"
+            android:configChanges="screenSize|orientation"></activity>
 
         <receiver android:name="com.android.receiver.GpsStatusReceiver">
             <intent-filter android:priority="999">
