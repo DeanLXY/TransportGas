@@ -2,6 +2,8 @@
 <resources>
 
     <color name="white">#ffffff</color>
+    <color name="boderColor">#ffa8a8a8</color>
+
     <color name="transparent">#00000000</color>
     <color name="appBackground">#84df2a</color>
     <color name="appTitleBackground">#ffb60f</color>

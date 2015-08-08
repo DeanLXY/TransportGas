@@ -7,6 +7,7 @@
 
         <item name="colorPrimary">@color/appBackground</item>
         <item name="colorPrimaryDark">@color/appBackground</item>
+        <item name="colorControlActivated">@color/appBackground</item>
         <item name="android:fitsSystemWindows">true</item>
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
@@ -15,6 +16,7 @@
         <item name="android:windowNoTitle">true</item>
         <item name="android:activatedBackgroundIndicator">@drawable/activated_background</item>
         <item name="selectableItemBackground">@drawable/selectable_background</item>
+
         <!-- <item name="android:windowAnimationStyle">@style/AnimationActivity</item> -->
     </style>
 
@@ -59,7 +61,14 @@
         <!--<item name="android:textColorSecondary">@android:color/white</item>-->
         <!--<item name="android:textCursorDrawable">@drawable/cursor_drawable</item>-->
     </style>
+
     <style name="MyFontStyle">
         <item name="android:textSize">20sp</item>
     </style>
+
+    <style name="EditTextTheme">
+        <item name="android:textSize">@dimen/abc_text_size_medium_material</item>
+        <item name="android:textCursorDrawable">@drawable/cursor_drawable</item>
+    </style>
+
 </resources>

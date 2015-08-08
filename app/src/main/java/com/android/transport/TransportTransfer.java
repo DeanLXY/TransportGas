@@ -47,7 +47,7 @@ public class TransportTransfer extends IActivity implements View.OnClickListener
     @Override
     public void onClick(View view) {
         if (view == btnTurnBottle) {
-            Intent captureIntent = new Intent(this, CaptureActivity.class);
+            Intent captureIntent = new Intent(this, ScanActivity.class);
             startActivity(captureIntent);
         }
     }

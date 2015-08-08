@@ -29,6 +29,11 @@
     <color name="background_floating_material_light">#ffeeeeee</color>
     <color name="background_material_dark">#ff303030</color>
     <color name="background_material_light">#ffeeeeee</color>
+    <!-- From: file:/D:/Android/AsWorkspace/TransportGas/app/src/main/res/values/colors.xml -->
+    <eat-comment/>
+    <color name="boderColor">#ffa8a8a8</color>
+    <!-- From: file:/D:/Android/AsWorkspace/TransportGas/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/res/values/values.xml -->
+    <eat-comment/>
     <color name="bright_foreground_disabled_material_dark">#80ffffff</color>
     <color name="bright_foreground_disabled_material_light">#80000000</color>
     <color name="bright_foreground_inverse_material_dark">@color/bright_foreground_material_light</color>
@@ -338,6 +343,7 @@
 
         <item name="colorPrimary">@color/appBackground</item>
         <item name="colorPrimaryDark">@color/appBackground</item>
+        <item name="colorControlActivated">@color/appBackground</item>
         <item name="android:fitsSystemWindows">true</item>
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
@@ -346,6 +352,7 @@
         <item name="android:windowNoTitle">true</item>
         <item name="android:activatedBackgroundIndicator">@drawable/activated_background</item>
         <item name="selectableItemBackground">@drawable/selectable_background</item>
+
         <!-- <item name="android:windowAnimationStyle">@style/AnimationActivity</item> -->
     </style>
     <!-- From: file:/D:/Android/AsWorkspace/TransportGas/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/res/values/values.xml -->
@@ -1273,6 +1280,10 @@
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">25dp</item>
         <item name="android:gravity">center</item>
+    </style>
+    <style name="EditTextTheme">
+        <item name="android:textSize">@dimen/abc_text_size_medium_material</item>
+        <item name="android:textCursorDrawable">@drawable/cursor_drawable</item>
     </style>
     <style name="MainTheme" parent="AppTheme">
         <item name="android:textColorPrimary">@android:color/black</item>

@@ -139,7 +139,6 @@ public class BaseFindCardFragment extends Fragment implements OnClickListener {
                             e.printStackTrace();
                         }
                     }
-                    //����֤�����
                     uid = reader.findIDcard();
                     listData = new ArrayList<Map<String, Object>>();
                     if (uid != null) {
